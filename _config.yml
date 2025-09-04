@@ -1,9 +1,9 @@
 title: Open Coding 
-description: "Class of 2026"
-owner_name: John Mortensen
-github_username: jm1021 
-github_repo: "student" 
-baseurl: "/student" 
+description: "Class of 2027"
+owner_name: Varada Chirag Vichare
+github_username: vvarada2009
+github_repo: "varada-student" 
+baseurl: "/varada-student" 
 future: true
 remote_theme: jekyll/minima
 minima:

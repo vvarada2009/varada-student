@@ -1,0 +1,170 @@
+---
+layout: post
+toc: True
+breadcrumb: True
+title: Tool Setup Blog
+permalink: /tool_setup
+author: Varada Vichare
+---
+
+# From Mac to Windows: My Dev Tool Setup (With Some Debugging... and Jokes)
+
+After using my MacBook for a long time, I recently switched to a Windows machine because my Macbook was too old to run things on VScode. Sounds easy, right? Not quite.
+
+I had to redo my entire development toolchain. I had to do it multiple times, tweak configs, debug weird permission issues, and question my life choices more than once. 
+
+But I finally got it working, and here's how I did it—with WSL, Ubuntu, Git, VS Code, Python, Make, and more.
+
+---
+
+##  The Goal
+
+Set up a Linux-like development environment on Windows using:
+- **WSL (Windows Subsystem for Linux)**
+- **Ubuntu 24.04**
+- **VS Code + Git + Python + Ruby + Make**
+- A cloned project repo with activation scripts and virtual environments
+
+---
+
+## 🧑‍💻 The Setup Process
+
+### 🔧 Step 1: Install WSL with Ubuntu
+
+Windows has made this super easy:
+
+```bash
+wsl --install -d Ubuntu-24.04
+```
+
+This installs WSL and Ubuntu 24.04 in one command.
+
+When prompted, I created a username and password (note: password input is hidden).
+
+After install, I exited WSL using `exit`.
+
+Set Ubuntu as default:
+```bash
+wsl --set-default Ubuntu-24.04
+```
+
+Launch it anytime using:
+```bash
+wsl
+```
+
+###  Step 2: First-Time Ubuntu Setup
+
+Once inside Ubuntu, I did:
+
+```bash
+mkdir opencs
+cd opencs
+```
+
+Then configured Git to work with Windows' credential manager:
+
+```bash
+git config --global credential.helper "/mnt/c/Program\ Files/Git/mingw64/bin/git-credential-manager.exe"
+```
+
+Cloned the student project repo:
+
+```bash
+git clone https://github.com/Open-Coding-Society/student.git
+cd student
+```
+
+Activated the environment:
+
+```bash
+./scripts/activate_ubuntu.sh
+./scripts/activate.sh
+./scripts/venv.sh
+```
+
+These scripts set up Git, Python virtual environments, and other tools I'd need for development.
+
+###  Step 3: System Checks
+
+To make sure everything installed correctly, I ran:
+
+```bash
+python --version
+pip --version
+ruby -v
+bundle -v
+gem --version
+git config --global --list
+```
+
+All good ✅
+
+###  Step 4: Everyday Workflow
+
+Every time I open a new terminal, I run:
+
+```bash
+cd opencs/student
+source venv/bin/activate
+code .
+```
+
+This reactivates my environment and opens the project in VS Code, ready to go.
+
+---
+
+## Tools Installed on Windows Side
+
+- **VS Code**: Installed from [code.visualstudio.com](https://code.visualstudio.com)
+  - Extensions: Python, Jupyter, GitLens, Prettier
+- **Git for Windows**: Includes Git Credential Manager
+- **Windows Terminal**: Pinned for easy access
+- **Make**: Installed via Chocolatey (`choco install make`) because make is not native to Windows
+- **WSL Ubuntu 24.04**: The true workhorse
+
+---
+
+##  Things I Got Stuck On
+
+- Forgetting to activate the virtual environment and wondering why Python packages weren't working
+- Accidentally cloning into the wrong directory (3 times...)
+- Mistyping paths when referencing Program Files on Windows from WSL
+- Trying to use Linux commands from PowerShell—oops.
+
+---
+
+##  What I Learned
+
+- WSL is genuinely powerful, but you need to understand when you're in Windows and when you're in Linux
+- Scripts are your best friend: don't manually redo things if a script can automate it
+- Always check your PATH and environment variables
+
+---
+
+##  Some Dev Humor to Celebrate My Setup Finally Working
+
+**Why do programmers prefer dark mode?**  
+Because light attracts bugs.
+
+**Why did the JavaScript dev break up with his girlfriend?**  
+Because she had too many "issues".
+
+**Why do I keep breaking my setup?**  
+Because `sudo rm -rf /`... just kidding. I'm not that chaotic.
+
+---
+
+## ✅ Summary
+
+Switching from macOS to Windows for development is doable, but not frictionless. With WSL and some patience, I now have a setup that mimics a Linux dev environment, works inside VS Code, and supports Python, Ruby, Make, and Git workflows.
+
+I've broken this setup a few times, so this blog is as much for future me as it is for anyone else going through this.
+
+If you're also making this transition and get stuck, feel free to reach out. I probably broke the same thing.
+
+Happy coding! 💻
+
+---
+
+*By Varada Vichare*

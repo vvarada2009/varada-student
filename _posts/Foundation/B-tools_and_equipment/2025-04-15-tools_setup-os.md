@@ -1,99 +1,90 @@
 ---
 layout: post
-title: Setting Up VS Code on Windows for CSP Projects
+title: Tools Set-up Blog  
 permalink: /tools/setupblog
 comments: true
 ---
 
+Switching from a MacBook to a Windows computer for CSP projects required setting up VS Code, and learning how to use terminal and VS Code on a different computer. Here is my journey of how I set up VS code and successfully, afer many tries,  got everything working and running!
 
-Switching from a MacBook to a Windows computer for CSP projects required setting up VS Code once again. Here is my journey documenting all the commands and tasks I completed and finally got everything to work on my Windows computer!
+## 🖥️ 1. Installing VS Code and Dependencies on Windows
 
+Downloaded VS Code from [https://code.visualstudio.com/](https://code.visualstudio.com/) and installed it. During installation, ensured:
+- **Add VS Code to PATH**
+- **Enable context menu entries** to open folders directly
 
-Installing VS Code and Dependencies on Windows
-
-
-Downloaded VS Code from https://code.visualstudio.com/ and installed it. During installation, made sure to:
-- Add VS Code to PATH
-- Enable context menu entries to open folders directly
-
-
-Installed necessary VS Code extensions:
-- Python (Microsoft) for running Python code
-Jupyter (Microsoft) for notebooks
-- GitLens (optional) for Git integration
+**Installed VS Code Extensions**:
+- `Python (Microsoft)` – Python support and debugging
+- `Jupyter (Microsoft)` – Notebook integration
+- `GitLens` – Advanced Git history and insights
 
 
--
+**Verified installations:**
 
-
-Installed Python and verified installation:
+```bash
+# Check Python version
 python --version
 
+# Check Git version and configuration
+git --version
+git config --global user.name "Varada Chirag Vichare"
+git config --global user.email "varada.vichare@gmail.com"
+```
 
-Installed Git for Windows and configured my identity:
-git config --global user.name "Your Name"
-git config --global user.email "you@example.com"
+## 📂 2. Managing Repositories
 
+- Copied the `pages` repository into a personal folder under the `opencs` directory
+- Experimented with **theme changes** in the `pages` repo to personalize the site
+-Created a student personal repository 
 
-Transitioning Projects from Mac to Windows
+## 🐍 3. Setting Up a Virtual Environment
 
+Run setup script for virtual environment:
 
-Cloned the `pages` repository into my personal folder under the `opencs` directory to work without affecting the main repo.
-
-
-Experimented with theme changes on the `pages` repo to personalize it.
-
-
-Setting Up a Virtual Environment
-
-
-Ran the virtual environment setup script:
+```bash
+# Setup virtual environment
 ./scripts/venv.sh
+```
 
+Activate virtual environment:
 
-Activated the virtual environment before running code:
+```bash
+# Activate venv before running code
 source/venv/bin/activate
+```
 
 
-Verified that the virtual environment was active by checking the Python interpreter in VS Code.
+## 🤝 4. Repository Collaboration
 
+- Created a shared repository for my team 
+- Created a fork of the team repository 
 
-Repository Collaboration
+## 📓 5. Working with Jupyter Notebooks
 
+- Locate the notebook file (e.g., `Jokes.ipynb`) in the personal repo
+- Open **Developer Tools → Console → Clear**
+- Run cells with the play button
+- Adjust code so outputs display correctly on `pages` as well as chaning the jokes to some of my own!
+- Commit changes with outputs:
 
-Created a shared repository with my group.
-
-
-Working with Jupyter Notebooks:
-
-
-Located the Jupyter Notebook file in my personal repo.
-
-
-Opened Developer Tools in VS Code, selected Console, and cleared previous outputs.
-
-
-Ran notebook cells using the play button, for example in the `2025-08-21-github_pages.ipynb` file.
-
-
-Changed the joked into html format and added some jokes of my own.
-
-
-Committed the notebook with outputs to Git:
+```bash
+# Commit notebook with outputs
 git add <notebook_filename>.ipynb
 git commit -m "Updated notebook with outputs"
 git push
+```
 
 
-Other Tasks Completed
+## ✅ 6. Other Tasks Completed
+
+- Verified all outputs in notebooks appeared correctly on pages
+- Confirmed Python code ran properly in the virtual environment
+- Managed multiple repositories and forks
+- Customized project settings and themes for personal workflow
+- Ensured VS Code functionality on Windows 
+
+## 🌟 Final Thoughts
+
+After many efforts and tries, I was able to finally get everything set up properly on my new Windows computer. This experience of switching and re-doing everything on a different computer allowed me to grow as a student and learn many new things. Furthermore, I am also highly grateful for my peers who helped me out during this process and teaching me new things! 
 
 
-- Verified all outputs in Jupyter notebooks appeared correctly on pages.
-- Confirmed Python code ran properly in the virtual environment.
-- Ensured VS Code was fully functional on Windows, replicating my MacBook setup.
-
-
-Final Thoughts
-
-
-Switching from Mac to Windows was a learning experience for me. It required me to carefully follow instructions and set up VS Code, Python, virtual environments, Jupyter Notebooks, and repository management.

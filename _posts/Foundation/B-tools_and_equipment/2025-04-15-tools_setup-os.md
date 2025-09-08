@@ -5,7 +5,7 @@ permalink: /tools/setupblog
 comments: true
 ---
 
-Switching from a MacBook to a Windows computer for CSP projects required setting up VS Code, and learning how to use terminal and VS Code on a different computer. Here is my journey of how I set up VS code and successfully, afer many tries,  got everything working and running!
+Switching from a MacBook to a Windows computer for my CSP class required setting up VS Code, and learning how to use terminal and VS Code on a different computer. Here is my journey of how I set up VS code and successfully, after many tries,  got everything working and running!
 
 ## 🖥️ 1. Installing VS Code and Dependencies on Windows
 

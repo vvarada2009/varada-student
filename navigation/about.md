@@ -23,7 +23,8 @@ Here are some places I have lived.
 .grid-item img {
     width: 100%;
     height: 100px;
-    object-fit: contain;
+    object-fit: cover;
+    border-radius: 10px;
 }
 .grid-item p {
     margin: 5px 0;
@@ -154,10 +155,14 @@ Here's a bit about me.
   Del Norte High School
 
 - **Family**  
-  I have a 3-year-old sister.
+  I have a 3-year-old sister.  
+  I live with my parents and my sister.  
+  I am the eldest child.
 
 - **About Me**  
-  I'm 15 years old, birthday in October.
+  My birthday is **October 9, 2009** 🎂  
+  I'm **15 years old**  
+  I'm a **Libra ♎**
 
 ---
 
@@ -196,6 +201,60 @@ document.querySelectorAll('.food-tile').forEach(tile => {
     });
 });
 </script>
+
+---
+
+### Favorite Places to Visit 🌍
+
+<div class="grid-container">
+  <div class="grid-item">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/7/77/Paradise_Island_Bahamas.jpg" alt="Bahamas">
+    <p>Bahamas 🏝️</p>
+  </div>
+  <div class="grid-item">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/4/4f/Alaska_Mountains.jpg" alt="Alaska">
+    <p>Alaska ❄️</p>
+  </div>
+  <div class="grid-item">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/fc/Bali_rice_terraces.jpg" alt="Bali">
+    <p>Bali 🌺</p>
+  </div>
+  <div class="grid-item">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Tour_Eiffel_Wikimedia_Commons.jpg" alt="Paris">
+    <p>Paris 🗼</p>
+  </div>
+  <div class="grid-item">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/e/e3/Kheops-Pyramid.jpg" alt="Egypt">
+    <p>Egypt 🏜️</p>
+  </div>
+</div>
+
+---
+
+### Hobbies 🎨✨
+
+<div class="grid-container">
+  <div class="grid-item">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/f/f4/Sunset_2007-1.jpg" alt="Watching the Sunset">
+    <p>Watching the Sunset 🌅</p>
+  </div>
+  <div class="grid-item">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/c/c3/Crochet_yarn.jpg" alt="Crocheting">
+    <p>Crocheting 🧶</p>
+  </div>
+  <div class="grid-item">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Pencil_drawing.jpg" alt="Drawing">
+    <p>Drawing ✏️</p>
+  </div>
+  <div class="grid-item">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3f/Camera_photography.jpg" alt="Photography">
+    <p>Photography 📸</p>
+  </div>
+  <div class="grid-item">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/3/3a/Shopping_bags.jpg" alt="Shopping">
+    <p>Shopping 🛍️</p>
+  </div>
+</div>
 
 <footer style="margin-top:18px;color:#666;font-size:0.95rem">
   Made with ❤️ — try clicking the flags and food!

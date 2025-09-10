@@ -93,11 +93,14 @@ After many efforts and tries, I was able to finally get everything set up proper
 - Created an **About Me page** in the `about.md` file
 
 ## 📂 Cloning Repositories 
--Cloned the pages repository of Open Coding Society
+-Cloned the pages repository of Open Coding 
+
 -Established Personal repository
+
 -Cloned team repository
 
 # General format to clone a repository
+
 git clone <repository-url>
 
 ## 📑 Copying Files Between Repositories

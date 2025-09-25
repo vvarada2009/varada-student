@@ -31,7 +31,6 @@ My main contribution to the project was **adding explanations to Level 3**, whic
 
 Here’s an example of how I adjusted the code to include explanations:
 
-```python
 # Function to show explanation after a Level 3 question
 def show_explanation(language):
     explanations = {

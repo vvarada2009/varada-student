@@ -68,6 +68,30 @@ As part of the project, our group was assigned **three programming lessons** to 
 
 **Overall Idea:** These lessons are designed to **teach programming concepts** while simultaneously testing **language identification skills**, making learning engaging and practical.
 
+## 🤝 Team’s Plan with Lessons
+
+From feedback and reflection, our team realized we needed to connect the game more with class lessons and make it more engaging and accessible.
+
+# Feedback we received:
+
+- 👍 Fun and engaging concept for rookies
+
+- 👎 Needs to tie more directly to course lessons
+
+- 👩‍💻 Should collaborate with advanced coders for design + accessibility improvements
+
+# Our plan moving forward:
+
+- 📝 Integrate actual lesson content into the quiz (not just random snippets)
+
+- 🎥 Add short (<1 min) explanatory videos alongside written explanations
+
+- 🧩 Offer targeted practice based on scoreboard results
+
+- 🎨 Improve visual design + accessibility (color contrast, fonts, layout)
+
+- 🌐 Eventually integrate into the OpenCS platform for broader use
+
 ---
 
 # 🎯 Individual Goals

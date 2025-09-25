@@ -1,0 +1,180 @@
+---
+title: "Boolean Logic in Programming"
+permalink: /boolean-lesson/
+---
+
+# Lesson: Introduction to Boolean Logic in Programming
+
+## 1. What is Boolean Logic?
+Boolean logic is the foundation of all modern computing.  
+It works with **truth values**:  
+- `True` (yes, on, 1)  
+- `False` (no, off, 0)  
+
+Booleans help computers make decisions.
+
+In most programming languages (Python, Java, C++, etc.), Boolean values are represented as:
+
+```python
+True
+False
+
+# Boolean Data Type
+A Boolean is its own data type: 
+'''
+x = True
+y = False
+
+print(type(x))  # <class 'bool'>
+'''
+# 3. Comparison Operators
+
+These return True or False.
+
+Operator	Meaning	Example
+==	Equal to	5 == 5 → True
+!=	Not equal to	5 != 3 → True
+>	Greater than	10 > 2 → True
+<	Less than	2 < 5 → True
+>=	Greater than or equal to	5 >= 5 → True
+<=	Less than or equal to	3 <= 4 → True
+
+Example:
+'''
+a = 10
+b = 20
+
+print(a == b)   # False
+print(a < b)    # True
+print(a != b)   # True
+'''
+4. Boolean Operators (AND, OR, NOT)
+
+Boolean operators combine conditions.
+
+and
+
+True if both are true
+'''
+x = True
+y = False
+print(x and y)       # False
+print(x and True)    # True
+'''
+or
+
+True if at least one is true
+'''
+print(True or False)   # True
+print(False or False)  # False
+'''
+not
+
+Flips the truth value
+'''
+print(not True)   # False
+print(not False)  # True
+'''
+# 5. Truth Tables
+AND
+A	B	A and B
+T	T	T
+T	F	F
+F	T	F
+F	F	F
+OR
+A	B	A or B
+T	T	T
+T	F	T
+F	T	T
+F	F	F
+NOT
+A	not A
+T	F
+F	T
+
+6. Combining Operators
+
+You can combine multiple conditions:
+'''
+age = 17
+has_permission = True
+
+if age >= 16 and has_permission:
+    print("You can drive!")
+else:
+    print("You cannot drive.")
+'''
+7. Short-Circuit Evaluation
+
+and: if the first is False, it doesn’t check the second.
+
+or: if the first is True, it doesn’t check the second.
+'''
+def expensive_check():
+    print("Expensive check runs!")
+    return True
+
+print(False and expensive_check())  # Won’t run the function
+print(True or expensive_check())    # Won’t run the function
+'''
+8. Boolean Conversion
+
+Anything in Python can be turned into a Boolean with bool().
+
+Rules:
+
+Falsy values: 0, "" (empty string), None, [], {}, False
+
+Truthy values: everything else
+'''
+print(bool(0))       # False
+print(bool(""))      # False
+print(bool("Hi"))    # True
+print(bool(123))     # True
+'''
+9. Real-Life Example
+Login system check
+'''
+username = "admin"
+password = "1234"
+
+input_user = "admin"
+input_pass = "1234"
+
+if input_user == username and input_pass == password:
+    print("Login successful!")
+else:
+    print("Login failed.")
+'''
+# Boolean Logic Summary
+
+- **Boolean**: A data type representing **True** or **False**.
+  
+- **Comparison Operators**: Return Boolean values.
+  - `==` : equal  
+  - `!=` : not equal  
+  - `>` , `<` , `>=` , `<=` : greater/less than (or equal)  
+
+- **Boolean Operators**: Combine conditions.
+  - `and` : True if both are True  
+  - `or` : True if at least one is True  
+  - `not` : inverts True/False  
+
+- **Truth Tables**:
+  - AND: True only if both True  
+  - OR: True if at least one True  
+  - NOT: flips True/False  
+
+- **Combining Conditions**: Multiple conditions can be combined in `if` statements.  
+- **Short-Circuit Evaluation**:  
+  - `and` stops if first is False  
+  - `or` stops if first is True  
+
+- **Boolean Conversion**: Any value can be converted to Boolean with `bool()`.  
+  - Falsy: `0`, `""`, `None`, `[]`, `{}`, `False`  
+  - Truthy: everything else  
+
+- **Practical Example**: Login system check, age verification, access control.
+
+- **Key Takeaway**: Booleans are the backbone of decision-making in code. They are used in comparisons, logic operations, and control flow.

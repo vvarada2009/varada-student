@@ -4,7 +4,7 @@ permalink: /individual-review-progress/
 ---
 # 🕹️ Coding Language Identification Game
 
-## 🎮 Game Summary
+## 🎮 Game Summary 
 
 We created an **interactive coding game** designed specifically for **new coders**. The goal of the game is to help players **recognize different programming languages** by looking at small code snippets and identifying which language it is. This allows beginners to **start understanding coding syntax, structure, and vocabulary** in a fun and interactive way.  
 
@@ -78,4 +78,4 @@ Here are my **personal goals** for the next steps of this project:
 2. **Learn about Iterations and Lists lessons** that my group members are developing, as well as additional programming lessons outside our group. This will help me expand my understanding and bring new ideas to the game.
 3. **Expand the game** by potentially adding more levels, incorporating new lessons, and making the game more challenging and educational. This could include new code snippets, more difficult questions, and additional explanations to help beginners learn faster.
 
-By achieving these goals, I hope to contribute to a **comprehensive and fun learning tool** for beginner coders that combines **gameplay, education, and interactive learning**.
+By achieving these goals, I hope to contribute to a **comprehensive and fun learning tool** for beginner coders that combines **gameplay, education, and interactive learning**. 

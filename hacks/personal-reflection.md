@@ -1,6 +1,6 @@
 ---
 title: Individual Review Progress Blog
-permalink: /individual-review-progress/
+permalink: /individual-review-progress-blog/
 ---
 # 🕹️ Coding Language Identification Game
 

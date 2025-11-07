@@ -229,7 +229,7 @@ becomes available.
 
 
 
-Questions which I guessed and got correct: 1,6,13,16,23,30,35,40,43,47,58,60,65
+Questions which I guessed and got correct: 1,6,13,16,23,30,35,40,43,47,58,60
 
 What I learnt from on the questions that I guessed and got correct: 
 
@@ -263,7 +263,9 @@ What I learnt from on the questions that I guessed and got correct:
 
 60: I learnt about how programmers can use abstractino to manage the complexity of a program. For example, placing repeated code with procedure calls is an example of a procedural abstraction that may make it easier for a programmer to manage the complexity of a program. 
 
-65: In this question I kind of understood how to read and analyze what the code block was saying. I understood that when Y was negative the condition was not met because the count began at 0 and increased. Overall, from this question I learnt that paying attention to the specific output is very important and then you can logic your way through the question. 
+
+
+
 ---
 
 ### Something Cool to Share

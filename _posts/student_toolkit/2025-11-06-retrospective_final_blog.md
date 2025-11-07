@@ -15,7 +15,7 @@ author: Varada Vichare
 When I first joined this class, I walked in with zero coding experience.
 I had only heard of programming languages like Python and JavaScript, but I didn’t know what they actually did or how they worked. To me, coding felt like this mysterious world full of symbols and logic that only experts could understand.
 
-At the beginning, even the smallest things felt like big challenges — figuring out how to clone a repository, getting VS Code to actually run properly on my device, or understanding what it meant to commit and push changes to GitHub. I remember feeling a little lost, like everyone else knew what was happening while I was still trying to understand how the puzzle pieces fit together.
+At the beginning, even the smallest things felt like big challenges — figuring out how to clone a repository, getting VS Code to actually run properly on my device, or understanding what it meant to commit and push changes to GitHub. I remember feeling a little lost, like everyone else knew what was happening while I was still trying to understand what was going on. 
 
 But as the trimester went by, something changed. I started to gain confidence. The same things that once felt confusing started to make sense. I began learning how to:
 
@@ -23,7 +23,7 @@ But as the trimester went by, something changed. I started to gain confidence. T
 
 📁 Manage folders and files within different repositories
 
-🔄 Clone, fork, and push commits to GitHub like a pro
+🔄 Clone, fork, and push commits to GitHub 
 
 🚀 Deploy websites and projects to make them live and shareable
 

@@ -222,7 +222,7 @@ becomes available.
 
 
 
-Questions which I guessed and got correct: 1,6,13,16,23,30,35,40,43,47,53,58,60,65
+Questions which I guessed and got correct: 1,6,13,16,23,30,35,40,43,47,58,60,65
 
 What I learnt from on the questions that I guessed and got correct: 
 1: The point of the question was to replace the "Missing Code". What I learnt from this was that you have to look for what logically correct. I brought down the "second" one and then ensured that it went to the "temp" one because it was a patter the blocks before followed.
@@ -250,13 +250,11 @@ What I learnt from on the questions that I guessed and got correct:
 47: In this question I learnt that in public cryptography, a message is encrypted with a recipient’s public key and decrypted with the recipient’s private key.
 
 
-53:
-
-58:
+58: I leanrt that the Internet can provide tools, information, and knowledge to crowdsourcing participants and can lower geographic barriers to potential participants.
 
 
-60: 
+60: I learnt about how programmers can use abstractino to manage the complexity of a program. For example, placing repeated code with procedure calls is an example of a procedural abstraction that may make it easier for a programmer to manage the complexity of a program. 
 
-65: 
+65: In this question I kind of understood how to read and analyze what the code block was saying. I understood that when Y was negative the condition was not met because the count began at 0 and increased. Overall, from this question I learnt that paying attention to the specific output is very important and then you can logic your way through the question. 
 ---
 

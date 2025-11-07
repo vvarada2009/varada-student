@@ -6,28 +6,33 @@ title: Tool Setup Blog
 permalink: /retrospective-blog
 author: Varada Vichare
 ---
-# 💻 My Computer Science Journey 🌱
+# 💻 My Trimerster 1 Computer Science Journey 🌱
 
 ---
 
 ## 🚀 1. Comparing Myself to the Beginning of the Year
 
-When I first joined this class, I walked in with **zero coding experience**.  
-I had only heard of programming languages like **Python** and **JavaScript**, but I didn’t know what they actually *did* or how they worked. 
+When I first joined this class, I walked in with zero coding experience.
+I had only heard of programming languages like Python and JavaScript, but I didn’t know what they actually did or how they worked. To me, coding felt like this mysterious world full of symbols and logic that only experts could understand.
 
-At the start, I struggled with the basics such as cloning repositories, getting vscode to work on my device, commiting changes, and more. 
+At the beginning, even the smallest things felt like big challenges — figuring out how to clone a repository, getting VS Code to actually run properly on my device, or understanding what it meant to commit and push changes to GitHub. I remember feeling a little lost, like everyone else knew what was happening while I was still trying to understand how the puzzle pieces fit together.
 
-But as the trimester went by, I became much more confident with the tools we use every day. I learned how to:
-- 💻 Use the **VS Code **
-- 📁 Organize files and repositories
-- 🔄 **Clone, fork, and push commits** to GitHub
-- 🚀 **Deploy** projects online 
+But as the trimester went by, something changed. I started to gain confidence. The same things that once felt confusing started to make sense. I began learning how to:
+
+💻 Use VS Code to write and organize my code efficiently
+
+📁 Manage folders and files within different repositories
+
+🔄 Clone, fork, and push commits to GitHub like a pro
+
+🚀 Deploy websites and projects to make them live and shareable
 
 
+Along the way, I also discovered something I didn’t expect: the importance of collaboration. During our Digital Famine Project, I worked closely with my classmates, and that experience really opened my eyes. We shared ideas, divided up tasks, helped each other, and improved on creations. I had to go and talk to different people which built my communication skills. At the beginning of the trimester I only knew 2 people in the class but as we collaborated and switched up teams I got to work with new people and start to talk to other people. 
 
-Along the way, I also discovered the importance **collaboration**. During our **Digital Famine Project**, I started interacting more with classmates, asking for help when I got stuck, and sharing ideas to help others too. Through this, I had an opportunity to improve my teamwork skills.
+Now, looking back, the person I was at the beginning of the year would be shocked to see what I can do today. I’ve built small games, created my own website, and gained a real understanding of how code turns ideas into reality. 
 
-The person I was at the beginning of the year would have been shocked to see me creating games and more today!
+
 
 ---
 

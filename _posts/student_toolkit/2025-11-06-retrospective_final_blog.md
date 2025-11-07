@@ -77,8 +77,33 @@ Once I finished the test, I went back, reviewed my guesses, and analyzed the que
 Questions that I missed: 
 9,14,20, 21, 22,24,25,26,30,31,33,38,42,45,48,50,55,57,61,62
 
-Key topics missed: 
+Question name I missed:
+-Benefits of incremental and iterative development
+-Comparing loop algorithms
+-Finding the maximum value of three suing MAX
+-Comparing robot algorithms
+-Procedure to determine the weather
+-Compression by replacing TH and IS with characters
+-Shortening strings by replacing TH and IS
+-Completing robot code by adding if statement
+-Video-streaming service by genre
+-Comparing loop algorithms with robots
+-Apartment rental Web Site flowchart
+-Frequent customers of a snack bar
+-Increasing bit representation for internet protocol
+-NAND logic gate
+-Science experiment with 75 percent successful trials
+-Searchning list target
+-Results of the Keep Playing Procedure
+-Generate Happy from Harp and Puppy
+-Data about students at East and West High Schools
+-Comparing online encyclopedia with paper encyclopedia
 
+MC Corrections: 
+9) My answer: C
+Correct answer: D
+Key Idea to know: Incrementally adding code segments to correct, working programs can help programmers identify new errors that are introduced.
+14)
 
 
 ---

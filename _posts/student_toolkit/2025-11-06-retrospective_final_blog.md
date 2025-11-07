@@ -113,6 +113,19 @@ Why: The expression will first determine the maximum of a and b and then determi
 21:  My answer: C
 Correct answer: B
 Why: The code segment moves the robot forward two squares, rotates it right three times so that the robot faces the top of the grid, and then moves the robot forward three squares to the gray square.
-
+22:  My answer: D
+Correct answer: B
+Why: The Boolean expression evaluates to true when counter (the number of temperatures greater than or equal to 90) is greater than 50% of total (the number of entries in the list).
+24: My answer: B
+Correct answer: C
+Why: The transformation is lossless because an encoded string can be restored to its original version. For example, Open quotation, percent, hash, underscore, hash, underscore, percent E, underscore, BEST, underscore, W, hash, H, close quotation can be restored to Open quotation, THIS, underscore, IS, underscore, THE, underscore, BEST, underscore, WISH, close quotation by replacing all instances of Open quotation, percent, close quotationwith Open quotation, T H, close quotation and by replacing all instances of Open quotation, hash, close quotation with Open quotation, I S, close quotation.
+25: My answer: C
+Correct answer: B
+Why:  It is not possible to use byte pair encoding in the string Open quotation, LEVEL, underscore, UP, close quotationbecause no pair of characters appears in the string more than once.
+26: My answer: C
+Correct answer: A
+Why: 
+This code segment rotates right whenever there is an open square to the right. The robot will move forward from its initial location to the upper-left corner of the grid, then rotate right, then move forward to the upper-right corner of the grid, then rotate right, then move down two squares, then rotate right, then move forward to the gray square.
+30: 
 ---
 

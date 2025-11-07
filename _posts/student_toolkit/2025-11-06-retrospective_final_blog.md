@@ -238,9 +238,10 @@ What I learnt from on the questions that I guessed and got correct:
 30: In this question I learnt that that when a proecdure is before the loop and then # of times inside the loop, you have to add up these values. Therefore, the answer was 1+4= 5 hours to execute.
 
 
-35: I leanrt that the risk of a copyright violation when creating sample-based music can be minimized by 
+35: I leanrt that the Creative Commons licenses can be used by creators of digital music to specify how the samples can be used by others. I also learnt that ano-rights-reserved license allows others to freely make use of the samples.
 
-40:
+
+40: From this question, I learnt how to analyze tables which have many rows and then being able to analyze the values given in the tables in order to find correct answer. Furthermore with questions which tell you to select more than 1 answer, I learnt that process of elimination is very useful in leading to the correct answer. 
 
 
 43: 

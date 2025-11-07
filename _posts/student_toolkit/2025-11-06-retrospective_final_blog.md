@@ -51,11 +51,13 @@ Now, looking back, the person I was at the beginning of the year would be shocke
 **Night at the Museum** was the first time I got to **showcase** all our hard work and creativity in front of students, parents, and teachers. I had a really great experience connnecting with students form other computer science classes like CSSE and CSA. Seeing people play our game, solve vault puzzles, and compete with their friends on who would win the game first was very exciting. Furthermore, it was really great talking to parent and explaining our project to them and even answering some technical questions. I was able to incorporate skills from sprint 2 about presenting and implement them while presenting at N@TM by speaking clearly and having peers play our games as we showed them the modules of our media literacy planet. 
 
 **💬 Feedback that stood out to me:**
-- 👨‍👩‍👧 Parents loved how **interactive**, **organized**, and **educational** our project was.  
+- Parents liked how **interactive**, **organized**, and **educational** our project was.  
 - 🎮 Students from CSSE said the awareness game was fun and reminded them of topics such as propaganda which they learnt in their history or english classes at school
 - 🌟 Many people commented on how polished our vault design looked, especially the code and visuals at the end.  
 
 Overall, this night was very fun and engaging. It was a great experience to meet different people and present our idea and work to them. 
+
+
 
 ---
 

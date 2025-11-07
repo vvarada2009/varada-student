@@ -10,7 +10,7 @@ author: Varada Vichare
 
 ---
 
-## 🚀 1. Comparing Myself to the Beginning of the Year
+## 🚀  Comparing Myself to the Beginning of the Year
 
 When I first joined this class, I walked in with zero coding experience.
 I had only heard of programming languages like Python and JavaScript, but I didn’t know what they actually did or how they worked. To me, coding felt like this mysterious world full of symbols and logic that only experts could understand.
@@ -36,7 +36,7 @@ Now, looking back, the person I was at the beginning of the year would be shocke
 
 ---
 
-## 🧩 2. Remembering Key Things from the Three Sprints
+## 🧩  Remembering Key Things from the Three Sprints
 
 | **Sprint** | **Learnings & Challenges** |
 |-------------|-----------------------------|
@@ -46,7 +46,7 @@ Now, looking back, the person I was at the beginning of the year would be shocke
 
 ---
 
-## 🎨 3. Night at the Museum Experience
+## 🎨  Night at the Museum Experience
 
 **Night at the Museum** was the first time I got to **showcase** all our hard work and creativity in front of students, parents, and teachers. I had a really great experience connnecting with students form other computer science classes like CSSE and CSA. Seeing people play our game, solve vault puzzles, and compete with their friends on who would win the game first was very exciting. Furthermore, it was really great talking to parent and explaining our project to them and even answering some technical questions. I was able to incorporate skills from sprint 2 about presenting and implement them while presenting at N@TM by speaking clearly and having peers play our games as we showed them the modules of our media literacy planet. 
 
@@ -62,7 +62,7 @@ Overall, this night was very fun and engaging. It was a great experience to meet
 
 ---
 
-## 🧠 4. What I Want to Learn Next in Computer Science
+## 🧠  What I Want to Learn Next in Computer Science
 
 As I look ahead, I want to dive into **projects that have real-world applications**.  
 Since I’m very interested in **healthcare and neuroscience**, I’d love to design a tool or application that could help people. 
@@ -73,7 +73,7 @@ Beyond that, I want to explore how **computer science connects with the technolo
 
 ---
 
-## 📝 5. 2018 Multiple Choice Review
+## 📝  2018 Multiple Choice Review
 
 **🧭 My Approach:**  
 When I took the 2018 multiple-choice test, I didn’t set a timer. Instead, I focused on answering questions which I could and noting down topics which I struggles with.  I first answered the questions I was confident about and used logic to work through the ones I wasn’t sure of. For tougher questions, I wrote the **topic name** and **question number** on a sticky note beside me and guessed on the question and moved on.
@@ -269,5 +269,7 @@ What I learnt from on the questions that I guessed and got correct:
 
 ---
 ##🌱 Something Cool to Share
+
+
 The first day I came into CSP and we made our accounts on OpenCodingSociety, I was worried already. I was having trouble even setting up my account on the first day, so I thought I just sucked at coding overall even through it hadn't started. As the time went on I was facing more difficulties setting up VS code. However, after lots of efforts once everything was set up I started to understand how simple things worked such as making commits and seeing them deploy on my website. Even through this was just a small thing for other I really enjoyed this process because after weeks of struggling to even get VS code to open, I was very satisfied and happy to finally commit something! Before taking this class, I didn't really think of coding as something which was interesting to me, but after taking this class I developed a passion and high interest for it. I am inspired to create something in the future which combines coding with healthcare as both of these topics have become highly interesting to me. I also found this class very interactive and engaging since all my other classes require you to just learn things on your own and take tests, but this class alowed me to go out and collaborate with new people which was a very valuable experience. Overall, trimester 1 has been a great learning opportunity and growth experience for me and I look forward to the upcoming trimester as well!
 ---

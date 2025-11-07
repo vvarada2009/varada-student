@@ -86,6 +86,8 @@ Questions that I missed and did not know how to answer at all:
 9,14,20, 21, 22,24,25,26,30,31,33,38,42,45,48,50,55,57,61,62
 
 Question name I missed:
+
+
 -Benefits of incremental and iterative development
 
 -Comparing loop algorithms
@@ -128,6 +130,8 @@ Question name I missed:
 
 
 MC Corrections: 
+
+
 9
  My answer: C
 

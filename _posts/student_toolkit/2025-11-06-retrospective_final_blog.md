@@ -142,6 +142,44 @@ Why:
 This code segment rotates right whenever there is an open square to the right. The robot will move forward from its initial location to the upper-left corner of the grid, then rotate right, then move forward to the upper-right corner of the grid, then rotate right, then move down two squares, then rotate right, then move forward to the gray square.
 
 
-30: My answer: 
+31: My answer: A
+Correct answer: C
+Why: Program I correctly moves the robot to the gray square by repeatedly moving the robot forward, rotating left, moving forward, and rotating right. Program II correctly moves the robot to the gray square by moving the robot forward to the upper-right corner of the grid, rotating left, and moving forward to the upper-left corner of the grid.
+
+
+33 My answer: D
+Correct answer: A
+Why:  The flowchart sets include to true whenever floor is greater than 1 0 or bedrooms equal 3, and sets include to false otherwise. Therefore, the algorithm is equivalent to     Include, left arrow, open parenthesis, floor greater than 10, close parenthesis, OR, open parenthesis, bedrooms equal 3, close parenthesis.
+
+
+38: My answer: B
+Correct Answer: C
+Why:
+
+
+42
+
+
+45
+
+
+48
+
+
+50
+
+
+55
+
+57
+
+
+61
+
+
+
+62
+
+
 ---
 

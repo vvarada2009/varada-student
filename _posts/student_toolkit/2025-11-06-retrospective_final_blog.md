@@ -222,7 +222,7 @@ becomes available.
 
 
 
-Questions which I guessed and got correct: 1,4,6,13,
+Questions which I guessed and got correct: 1,4,6,
 
 ---
 

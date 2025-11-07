@@ -268,6 +268,7 @@ What I learnt from on the questions that I guessed and got correct:
 
 ---
 
-### Something Cool to Share
+###🌱 Something Cool to Share
 
 The first day I came into CSP and we made our accounts on OpenCodingSociety, I was worried already. I was having trouble even setting up my account on the first day, so I thought I just sucked at coding overall even through it hadn't started. As the time went on I was facing more difficulties setting up VS code. However, after lots of efforts once everything was set up I started to understand how simple things worked such as making commits and seeing them deploy on my website. Even through this was just a small thing for other I really enjoyed this process because after weeks of struggling to even get VS code to open, I was very satisfied and happy to finally commit something! Before taking this class, I didn't really think of coding as something which was interesting to me, but after taking this class I developed a passion and high interest for it. I am inspired to create something in the future which combines coding with healthcare as both of these topics have become highly interesting to me. I also found this class very interactive and engaging since all my other classes require you to just learn things on your own and take tests, but this class alowed me to go out and collaborate with new people which was a very valuable experience. Overall, trimester 1 has been a great learning opportunity and growth experience for me and I look forward to the upcoming trimester as well!
+---

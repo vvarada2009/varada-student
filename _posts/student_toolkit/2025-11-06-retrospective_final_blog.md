@@ -244,9 +244,11 @@ What I learnt from on the questions that I guessed and got correct:
 40: From this question, I learnt how to analyze tables which have many rows and then being able to analyze the values given in the tables in order to find correct answer. Furthermore with questions which tell you to select more than 1 answer, I learnt that process of elimination is very useful in leading to the correct answer. 
 
 
-43: 
+43: This question was similar to a math question. I leanrt to look at a data table and simply answer questions about it. The key was to understand what the table was about. 
 
-47:
+
+47: In this question I learnt that in public cryptography, a message is encrypted with a recipient’s public key and decrypted with the recipient’s private key.
+
 
 53:
 
@@ -255,6 +257,6 @@ What I learnt from on the questions that I guessed and got correct:
 
 60: 
 
-65
+65: 
 ---
 

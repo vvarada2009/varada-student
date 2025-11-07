@@ -57,7 +57,7 @@ Now, looking back, the person I was at the beginning of the year would be shocke
 
 Overall, this night was very fun and engaging. It was a great experience to meet different people and present our idea and work to them. 
 
-<img src="{{site.baseurl}}/IMG_5441.jpeg" alt="" width="300px">
+<img src="{{site.baseurl}}/N@TM.png" alt="" width="300px">
 
 
 ---

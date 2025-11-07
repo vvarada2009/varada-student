@@ -102,9 +102,17 @@ Question name I missed:
 MC Corrections: 
 9) My answer: C
 Correct answer: D
-Key Idea to know: Incrementally adding code segments to correct, working programs can help programmers identify new errors that are introduced.
-14)
-
+Why: Incrementally adding code segments to correct, working programs can help programmers identify new errors that are introduced.
+14) My answer: B
+Correct answer: C
+Why: The programs each display ten values, but each value displayed by program B is one greater than the
+corresponding value from program A. Program A displays 1 2 3 4 5 6 7 8 9 10 and program B displays  2 3 4 5 6 7 8 9 10 11.
+20: My answer: C
+Correct answer: A
+Why: The expression will first determine the maximum of a and b and then determine the maximum of the resulting value and c. This will result in the maximum of all three values.
+21:  My answer: C
+Correct answer: B
+Why: The code segment moves the robot forward two squares, rotates it right three times so that the robot faces the top of the grid, and then moves the robot forward three squares to the gray square.
 
 ---
 

@@ -57,7 +57,7 @@ Now, looking back, the person I was at the beginning of the year would be shocke
 
 Overall, this night was very fun and engaging. It was a great experience to meet different people and present our idea and work to them. 
 
-<![N@TM event](./images/event/N@TM.png)>
+<img src="../../../../../varada-student/images/final/N@TM.png"> 
 
 
 ---

@@ -10,7 +10,7 @@ author: Varada Vichare
 
 ---
 
-## 🚀  Comparing Myself to the Beginning of the Year
+##  Comparing Myself to the Beginning of the Year
 
 When I first joined this class, I walked in with zero coding experience.
 I had only heard of programming languages like Python and JavaScript, but I didn’t know what they actually did or how they worked. To me, coding felt like this mysterious world full of symbols and logic that only experts could understand.
@@ -19,13 +19,13 @@ At the beginning, even the smallest things felt like big challenges — figuring
 
 But as the trimester went by, something changed. I started to gain confidence. The same things that once felt confusing started to make sense. I began learning how to:
 
-💻 Use VS Code to write and organize my code efficiently
+-  Use VS Code to write and organize my code efficiently
 
-📁 Manage folders and files within different repositories
+- Manage folders and files within different repositories
 
-🔄 Clone, fork, and push commits to GitHub 
+- Clone, fork, and push commits to GitHub 
 
-🚀 Deploy websites and projects to make them live and shareable
+- Deploy websites and projects to make them live and shareable
 
 
 Along the way, I also discovered something I didn’t expect: the importance of collaboration. During our Digital Famine Project, I worked closely with my classmates, and that experience really opened my eyes. We shared ideas, divided up tasks, helped each other, and improved on creations. I had to go and talk to different people which built my communication skills. At the beginning of the trimester I only knew 2 people in the class but as we collaborated and switched up teams I got to work with new people and start to talk to other people. 
@@ -36,24 +36,24 @@ Now, looking back, the person I was at the beginning of the year would be shocke
 
 ---
 
-## 🧩  Remembering Key Things from the Three Sprints
+##   Remembering Key Things from the Three Sprints
 
 | **Sprint** | **Learnings & Challenges** |
 |-------------|-----------------------------|
-| **🌀 Sprint 1:** | Sprint 1 was easily the most frustrating — but also the most important — part of my learning journey. I struggled just trying to get **VS Code** to work. First, I worked on my **school laptop**, but it was slow and I had a lot of trouble getting thigs to load and run effectively. Then I switched to my **MacBook**, which turned out to be too old for virtual environments or `make`. Finally, after endless trial and error, I set everything up successfully on my **Windows PC**. That moment taught me something huge: **coding requires patience and persistence**. I had to work through challenges and it taught me to nevel give up. It was really satisfying when I finally made my first commit after weeks of not being able to get vscode to run properly. By the end of Sprint 1, I learned how to troubleshoot problems on my own and felt more resilient than ever. |
-| **💡 Sprint 2:** Building Foundations | This sprint helped me actually understand how coding *works*. We dove deeper into **Python** and **JavaScript**, reinforcing essential topics like **strings**, **loops**, **booleans**, and **conditionals**. Each exercise made the concepts clearer, and I began to learn patterns between the two languages. Our lessons and peer-assigned activities gave me more confidence to write my own code. We also worked on **presentations**, and even though my group missed the interactive part of the lesson, I learned how to organize information, speak confidently, and learn to make lessons engaging through feedback — skills that later helped me during **Night at the Museum**. |
-| **🌍 Sprint 3:** Collaboration and Creation | Sprint 3 was when everything came together. We collaborated on the **Digital Famine Project**, which meant working not only within small groups but also across the entire class. We managed tasks through **shared repositories** and balancing ideas from multiple people. I worked on **Submodule 1: Awareness**, as part of the **Media Literacy Plant**. Initially, our plan was to create a video, and I was responsible for brainstorming, scripting, and planning visuals. Later, we switched to make an **interactive game** — something more hands-on for the audience. My original ideas from the script turned into the foundation of the game. The game taught users to sort media into three “buckets”: **Sell**, **Inform**, and **Persuade**. Furthermore, besides working on the core idea and helping create the game for submodule 1, I helped with the **vault code** system. I helped to ensure the background for the vault was the same as the others, the code worked and lead to a certificate for completeting the media literacy module, and formatting everything so it matched a overall theme. Through this sprint, I improved my **teamwork**, **creativity**, and **attention to detail** and learn how to transform a collaborative idea into a tangible product. 
+| ** Sprint 1:** | Sprint 1 was easily the most frustrating — but also the most important — part of my learning journey. I struggled just trying to get **VS Code** to work. First, I worked on my **school laptop**, but it was slow and I had a lot of trouble getting thigs to load and run effectively. Then I switched to my **MacBook**, which turned out to be too old for virtual environments or `make`. Finally, after endless trial and error, I set everything up successfully on my **Windows PC**. That moment taught me something huge: **coding requires patience and persistence**. I had to work through challenges and it taught me to nevel give up. It was really satisfying when I finally made my first commit after weeks of not being able to get vscode to run properly. By the end of Sprint 1, I learned how to troubleshoot problems on my own and felt more resilient than ever. |
+| ** Sprint 2:** Building Foundations | This sprint helped me actually understand how coding *works*. We dove deeper into **Python** and **JavaScript**, reinforcing essential topics like **strings**, **loops**, **booleans**, and **conditionals**. Each exercise made the concepts clearer, and I began to learn patterns between the two languages. Our lessons and peer-assigned activities gave me more confidence to write my own code. We also worked on **presentations**, and even though my group missed the interactive part of the lesson, I learned how to organize information, speak confidently, and learn to make lessons engaging through feedback — skills that later helped me during **Night at the Museum**. |
+| ** Sprint 3:** Collaboration and Creation | Sprint 3 was when everything came together. We collaborated on the **Digital Famine Project**, which meant working not only within small groups but also across the entire class. We managed tasks through **shared repositories** and balancing ideas from multiple people. I worked on **Submodule 1: Awareness**, as part of the **Media Literacy Plant**. Initially, our plan was to create a video, and I was responsible for brainstorming, scripting, and planning visuals. Later, we switched to make an **interactive game** — something more hands-on for the audience. My original ideas from the script turned into the foundation of the game. The game taught users to sort media into three “buckets”: **Sell**, **Inform**, and **Persuade**. Furthermore, besides working on the core idea and helping create the game for submodule 1, I helped with the **vault code** system. I helped to ensure the background for the vault was the same as the others, the code worked and lead to a certificate for completeting the media literacy module, and formatting everything so it matched a overall theme. Through this sprint, I improved my **teamwork**, **creativity**, and **attention to detail** and learn how to transform a collaborative idea into a tangible product. 
 
 ---
 
-## 🎨  Night at the Museum Experience
+##   Night at the Museum Experience
 
 **Night at the Museum** was the first time I got to **showcase** all our hard work and creativity in front of students, parents, and teachers. I had a really great experience connnecting with students form other computer science classes like CSSE and CSA. Seeing people play our game, solve vault puzzles, and compete with their friends on who would win the game first was very exciting. Furthermore, it was really great talking to parent and explaining our project to them and even answering some technical questions. I was able to incorporate skills from sprint 2 about presenting and implement them while presenting at N@TM by speaking clearly and having peers play our games as we showed them the modules of our media literacy planet. 
 
 **💬 Feedback that stood out to me:**
 - Parents liked how **interactive**, **organized**, and **educational** our project was.  
-- 🎮 Students from CSSE said the awareness game was fun and reminded them of topics such as propaganda which they learnt in their history or english classes at school
-- 🌟 Many people commented on how polished our vault design looked, especially the code and visuals at the end.  
+-  Students from CSSE said the awareness game was fun and reminded them of topics such as propaganda which they learnt in their history or english classes at school
+-  Many people commented on how polished our vault design looked, especially the code and visuals at the end.  
 
 Overall, this night was very fun and engaging. It was a great experience to meet different people and present our idea and work to them. 
 
@@ -62,7 +62,7 @@ Overall, this night was very fun and engaging. It was a great experience to meet
 
 ---
 
-## 🧠  What I Want to Learn Next in Computer Science
+##   What I Want to Learn Next in Computer Science
 
 As I look ahead, I want to dive into **projects that have real-world applications**.  
 Since I’m very interested in **healthcare and neuroscience**, I’d love to design a tool or application that could help people. 
@@ -73,9 +73,9 @@ Beyond that, I want to explore how **computer science connects with the technolo
 
 ---
 
-## 📝  2018 Multiple Choice Review
+##   2018 Multiple Choice Review
 
-**🧭 My Approach:**  
+** My Approach:**  
 When I took the 2018 multiple-choice test, I didn’t set a timer. Instead, I focused on answering questions which I could and noting down topics which I struggles with.  I first answered the questions I was confident about and used logic to work through the ones I wasn’t sure of. For tougher questions, I wrote the **topic name** and **question number** on a sticky note beside me and guessed on the question and moved on.
 
 Once I finished the test, I went back, reviewed my guesses, and analyzed the questions I missed. I noticed patterns in my mistakes — certain topics kept reappearing — so I researched those areas and revisited the **College Board-recommended lessons** to strengthen my weak spots.  
@@ -331,7 +331,7 @@ What I learnt from on the questions that I guessed and got correct:
 
 
 ---
-## 🌱 Something Cool to Share
+##  Something Cool to Share
 
 On the first day I came into CSP and we made our accounts on OpenCodingSociety, I was already worried. I was having trouble even setting up my account on the first day, so I thought I just sucked at coding overall even through it hadn't started. As the time went by I was facing more difficulties setting up VS code. However, after lots of efforts once everything was set up I started to understand how simple things worked such as making commits and seeing them deploy on my website. Even through this was just a small thing for others I really enjoyed commiting things because after weeks of struggling to even get VS code to open, I was very satisfied and happy to finally commit something! Before taking this class, I didn't really think of coding as something which was interesting to me, but after taking this class I developed a passion and high interest for it. I am inspired to create something in the future which combines coding with healthcare as both of these topics have become highly interesting to me. I also found this class very interactive and engaging since all my other classes require you to just learn things on your own and take tests, but this class alowed me to go out and collaborate with new people which was a very valuable experience. Overall, trimester 1 has been a great learning opportunity and growth experience for me and I look forward to the upcoming trimester as well!
 

@@ -330,6 +330,25 @@ What I learnt from on the questions that I guessed and got correct:
 60: I learnt about how programmers can use abstractino to manage the complexity of a program. For example, placing repeated code with procedure calls is an example of a procedural abstraction that may make it easier for a programmer to manage the complexity of a program. 
 
 
+Topics I need to improve on: 
+
+-Program design and development
+
+-Binary numbers
+
+-Data Compression
+
+-Mathematical expressions
+
+-Conditionals 
+
+-Boolean expressions 
+
+-Lists
+
+-Calling procedures 
+
+-Beneficial and harmful effects
 
 
 ---

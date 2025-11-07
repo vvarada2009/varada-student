@@ -100,71 +100,89 @@ Question name I missed:
 -Comparing online encyclopedia with paper encyclopedia
 
 MC Corrections: 
-9) My answer: C
+9
+ My answer: C
 Correct answer: D
 Why: Incrementally adding code segments to correct, working programs can help programmers identify new errors that are introduced.
 
 
-14) My answer: B
+14
+My answer: B
 Correct answer: C
 Why: The programs each display ten values, but each value displayed by program B is one greater than the
 corresponding value from program A. Program A displays 1 2 3 4 5 6 7 8 9 10 and program B displays  2 3 4 5 6 7 8 9 10 11.
 
 
-20: My answer: C
+20
+ My answer: C
 Correct answer: A
 Why: The expression will first determine the maximum of a and b and then determine the maximum of the resulting value and c. This will result in the maximum of all three values.
 
 
-21:  My answer: C
+21
+  My answer: C
 Correct answer: B
 Why: The code segment moves the robot forward two squares, rotates it right three times so that the robot faces the top of the grid, and then moves the robot forward three squares to the gray square.
 
 
-22:  My answer: D
+22
+  My answer: D
 Correct answer: B
 Why: The Boolean expression evaluates to true when counter (the number of temperatures greater than or equal to 90) is greater than 50% of total (the number of entries in the list).
 
 
-24: My answer: B
+24
+ My answer: B
 Correct answer: C
 Why: The transformation is lossless because an encoded string can be restored to its original version. For example, Open quotation, percent, hash, underscore, hash, underscore, percent E, underscore, BEST, underscore, W, hash, H, close quotation can be restored to Open quotation, THIS, underscore, IS, underscore, THE, underscore, BEST, underscore, WISH, close quotation by replacing all instances of Open quotation, percent, close quotationwith Open quotation, T H, close quotation and by replacing all instances of Open quotation, hash, close quotation with Open quotation, I S, close quotation.
 
 
-25: My answer: C
+25
+ My answer: C
 Correct answer: B
 Why:  It is not possible to use byte pair encoding in the string Open quotation, LEVEL, underscore, UP, close quotationbecause no pair of characters appears in the string more than once.
 
 
-26: My answer: C
+26
+ My answer: C
 Correct answer: A
 Why: 
 This code segment rotates right whenever there is an open square to the right. The robot will move forward from its initial location to the upper-left corner of the grid, then rotate right, then move forward to the upper-right corner of the grid, then rotate right, then move down two squares, then rotate right, then move forward to the gray square.
 
 
-31: My answer: A
+31
+ My answer: A
 Correct answer: C
 Why: Program I correctly moves the robot to the gray square by repeatedly moving the robot forward, rotating left, moving forward, and rotating right. Program II correctly moves the robot to the gray square by moving the robot forward to the upper-right corner of the grid, rotating left, and moving forward to the upper-left corner of the grid.
 
 
-33 My answer: D
+33 
+My answer: D
 Correct answer: A
 Why:  The flowchart sets include to true whenever floor is greater than 1 0 or bedrooms equal 3, and sets include to false otherwise. Therefore, the algorithm is equivalent to     Include, left arrow, open parenthesis, floor greater than 10, close parenthesis, OR, open parenthesis, bedrooms equal 3, close parenthesis.
 
 
-38: My answer: B
+38
+ My answer: B
 Correct Answer: C
-Why:
+Why:  The expression count, MOD, 10 equals 0 evaluates to true when count is a multiple of 1 0, and so this
+code segment sets cost to 0 under the appropriate conditions.
 
 
 42
+ My answer: B
+Correct answer: D
+Why:With 32-bit addressing, IPv4 has 2 raised to the thirty second power possible addresses. With 128-bit addressing, IPv6 has 2 raised to the one hundred twenty eighth power possible addresses. Since 2 raised to the thirty second power times 2 raised to the ninety sixth power equals 2 raised to the one hundred twenty eighth power, IPv6 has 2 raised to the ninety sixth power times as many possible addresses as IPv4.
 
 
 45
+ My answer: D
+Correct answer: C
+Why:The expression P AND Q evaluates to true when both P and Q are true, and evaluates to false otherwise. Therefore, the expression NOT, open parenthesis, P AND Q, close parenthesis evaluates to false when both P and Q are true, and evaluates to true otherwise.
 
 
 48
-
+My answer: 
 
 50
 

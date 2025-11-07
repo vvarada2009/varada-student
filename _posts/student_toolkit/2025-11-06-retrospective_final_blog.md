@@ -220,5 +220,9 @@ Correct Answer: C and D
 Why:  As any user has the ability to edit articles, there will be many opportunities for people with different perspectives to contribute. The online encyclopedia can be edited at any time, so it is easy to create or update articles as new information
 becomes available.
 
+
+
+Questions which I guessed and got correct: 1,4,6,13,
+
 ---
 

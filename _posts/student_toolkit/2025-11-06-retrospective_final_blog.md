@@ -182,22 +182,43 @@ Why:The expression P AND Q evaluates to true when both P and Q are true, and eva
 
 
 48
-My answer: 
+My answer: C
+Correct answer: D
+Why: This option causes the experiment to be successful when RANDOM, open parenthesis 1 comma 100, close parenthesis produces a result from 1 to 7 5, or 75% of the time.
+
 
 50
+My answer: C
+Correct Answer: B
+Why:  The procedure implements a linear search, which sequentially compares each element of the list with the target
+value. The list does not need to be sorted because the procedure checks list elements until either the target is found or it reaches the end of the list.
 
 
 55
+My answer: B
+Correct answer: D
+Why:  The expression open parenthesis, open parenthesis, response equals, open quotation, y, close quotation, close parenthesis, AND, open parenthesis, response equals, open quotation, yes, close quotation, close parenthesis, close parenthesisalways evaluates to false because it is not possible for the variable response to be equal to both Open quotation, y, close quotation and Open quotation, yes, close quotation. Therefore, the procedure will always
+return false.
+
 
 57
+My answer: A
+Correct Answer: B
+Why: This expression concatenates the first two letters of Open quotation, Harp, close quotation with the last three letters of Open quotation, puppy, close quotation, resulting
+in Open quotation, Happy, close quotation.
 
 
 61
-
+My answer: C
+Correct answer: A
+Why:  It is possible to create a single list of student names, sorted by last name. Both data formats provide the first and last names of each student.
 
 
 62
-
+My answer: A and B
+Correct Answer: C and D
+Why:  As any user has the ability to edit articles, there will be many opportunities for people with different perspectives to contribute. The online encyclopedia can be edited at any time, so it is easy to create or update articles as new information
+becomes available.
 
 ---
 

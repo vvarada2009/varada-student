@@ -222,7 +222,38 @@ becomes available.
 
 
 
-Questions which I guessed and got correct: 1,4,6,
+Questions which I guessed and got correct: 1,6,13,16,23,30,35,40,43,47,53,58,60,65
 
+What I learnt from on the questions that I guessed and got correct: 
+1: The point of the question was to replace the "Missing Code". What I learnt from this was that you have to look for what logically correct. I brought down the "second" one and then ensured that it went to the "temp" one because it was a patter the blocks before followed.
+
+6: I learnt that the Internet Engineering Task Force develops standards and protocols for Internet communication
+
+13: In this question you have to analyze the table and find the hypothesis which was most consistent with the data. Through this question, I leanred how to analyze tables and look for patterns and matching it to a supporting hypothesis.
+
+16: In this question I leanrt about what violated the MCA. If something is purchased and downladed through a licensed store or place it is not a violation.
+
+23: In this question, I leanrt that the path from P to S was not connected at all and that it is impossible if there is only one possible path from one device to another.
+
+30: In this question I learnt that that when a proecdure is before the loop and then # of times inside the loop, you have to add up these values. Therefore, the answer was 1+4= 5 hours to execute.
+
+
+35: I leanrt that the risk of a copyright violation when creating sample-based music can be minimized by 
+
+40:
+
+
+43: 
+
+47:
+
+53:
+
+58:
+
+
+60: 
+
+65
 ---
 

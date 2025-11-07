@@ -74,7 +74,7 @@ Once I finished the test, I went back, reviewed my guesses, and analyzed the que
 
 **📊 My Score:** 46 / 66  
 
-Questions that I missed: 
+Questions that I missed and did not know how to answer at all: 
 9,14,20, 21, 22,24,25,26,30,31,33,38,42,45,48,50,55,57,61,62
 
 Question name I missed:
@@ -225,6 +225,7 @@ becomes available.
 Questions which I guessed and got correct: 1,6,13,16,23,30,35,40,43,47,58,60,65
 
 What I learnt from on the questions that I guessed and got correct: 
+
 1: The point of the question was to replace the "Missing Code". What I learnt from this was that you have to look for what logically correct. I brought down the "second" one and then ensured that it went to the "temp" one because it was a patter the blocks before followed.
 
 6: I learnt that the Internet Engineering Task Force develops standards and protocols for Internet communication

@@ -4,297 +4,310 @@ title: Snake Game
 permalink: /app/
 ---
 
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ease - Elder Care Companion</title>
+<title>EaseCompanion - Elder Care App</title>
 
-<!-- ================== CSS ================== -->
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
 <style>
-  /* --- Global Styles --- */
   body {
-    font-family: "Segoe UI", Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
-    background-color: #f0f7f6;
-    color: #333;
+    background-color: #f0f4f8;
+    color: #222;
   }
 
   header {
-    text-align: center;
-    background: linear-gradient(135deg, #4caf50, #81c784);
+    background-color: #2a6ef7;
     color: white;
-    padding: 25px 10px;
-  }
-  header h1 { margin: 0; font-size: 2em; }
-  header p { margin: 5px 0 0 0; font-size: 1em; }
-
-  /* --- Sections / Cards --- */
-  section {
-    display: none;
-    padding: 20px;
-    max-width: 600px;
-    margin: 100px auto 100px auto;
-    background-color: #ffffff;
-    border-radius: 15px;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    transition: all 0.3s ease;
-  }
-  section.active { display: block; }
-
-  h2 {
-    margin-top: 0;
-    color: #4caf50;
     text-align: center;
+    padding: 1rem;
+    font-size: 1.5rem;
+    font-weight: 600;
   }
 
-  textarea, input[type="text"], input[type="time"] {
-    width: 100%;
-    padding: 12px;
-    margin: 5px 0 15px 0;
-    border-radius: 10px;
-    border: 1px solid #ccc;
-    font-size: 1em;
-  }
-
-  button.submit-btn {
-    padding: 12px 20px;
-    background-color: #4caf50;
-    color: white;
-    border: none;
-    border-radius: 10px;
-    cursor: pointer;
-    font-size: 1em;
-    margin-bottom: 15px;
-    width: 100%;
-    transition: 0.2s;
-  }
-  button.submit-btn:hover { background-color: #45a049; }
-
-  ul { list-style: none; padding: 0; }
-  li {
-    background-color: #e8f5e9;
-    padding: 10px;
-    margin: 8px 0;
-    border-radius: 8px;
-  }
-
-  /* --- Bottom Tab Navigation --- */
   nav {
-    display: flex;
-    justify-content: space-around;
-    background-color: #ffffff;
-    border-top: 1px solid #ccc;
     position: fixed;
     bottom: 0;
     width: 100%;
-    padding: 10px 0;
-    box-shadow: 0 -2px 6px rgba(0,0,0,0.1);
-    z-index: 1000;
+    display: flex;
+    background-color: #fff;
+    border-top: 1px solid #ccc;
   }
 
   nav button {
-    background: none;
+    flex: 1;
+    padding: 0.8rem 0;
     border: none;
-    font-size: 0.9em;
+    background: none;
+    font-size: 0.9rem;
     cursor: pointer;
     color: #555;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  nav button.active { color: #4caf50; font-weight: bold; }
-
-  /* --- Responsive --- */
-  @media (max-width: 600px) {
-    header h1 { font-size: 1.8em; }
-    header p { font-size: 0.9em; }
-    nav button { font-size: 0.8em; }
+    transition: 0.3s;
   }
 
+  nav button.active {
+    color: #2a6ef7;
+    font-weight: 600;
+  }
+
+  main {
+    padding: 1rem;
+    padding-bottom: 5rem;
+  }
+
+  section {
+    display: none;
+  }
+
+  section.active {
+    display: block;
+  }
+
+  .card {
+    background-color: white;
+    border-radius: 10px;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+  }
+
+  input, textarea {
+    width: 100%;
+    padding: 0.6rem;
+    margin-bottom: 0.6rem;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+  }
+
+  button.add-btn {
+    background-color: #2a6ef7;
+    color: white;
+    border: none;
+    padding: 0.6rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  h2 {
+    margin-top: 0;
+  }
+
+  .entry {
+    padding: 0.5rem 0;
+    border-bottom: 1px solid #eee;
+  }
+
+  .entry:last-child {
+    border-bottom: none;
+  }
+
+  label {
+    font-weight: 500;
+    margin-top: 0.5rem;
+    display: block;
+  }
 </style>
 </head>
 
 <body>
+<header>EaseCompanion</header>
 
-<header>
-  <h1>Ease</h1>
-  <p>Daily Care & Pain Tracking for Seniors</p>
-</header>
+<main>
+  <!-- Home Section -->
+  <section id="home" class="active card">
+    <h2>Welcome to EaseCompanion</h2>
+    <p>Track pain, medications, exercises, and care notes for seniors. Designed for elderly recovery and family/caregiver support.</p>
+  </section>
 
-<!-- ================== Sections ================== -->
-<section id="home" class="active">
-  <h2>Welcome to Ease!</h2>
-  <p>This app helps seniors manage pain, medications, exercises, and family involvement. Simple, mobile-friendly, and polished for real use.</p>
-  <ul>
-    <li>Log daily pain and symptoms</li>
-    <li>Add and track medication reminders</li>
-    <li>Track exercises and mobility routines</li>
-    <li>Share updates with family members (Care Circle)</li>
-  </ul>
-</section>
+  <!-- Pain Log Section -->
+  <section id="painLog" class="card">
+    <h2>Pain Log</h2>
+    <textarea id="painText" placeholder="Describe your pain..."></textarea>
+    <input type="text" id="painTags" placeholder="Optional tags (knee, hip, etc.)">
+    <button class="add-btn" onclick="addPain()">Add Entry</button>
+    <div id="painEntries"></div>
+  </section>
 
-<section id="pain-log">
-  <h2>Pain Log</h2>
-  <textarea id="pain-input" placeholder="Describe your pain today..."></textarea>
-  <input type="text" id="pain-tags" placeholder="Optional: Body part(s), intensity (e.g., knee, 6/10)">
-  <button class="submit-btn" onclick="addPainEntry()">Add Entry</button>
-  <ul id="pain-list"></ul>
-</section>
+  <!-- Medication Section -->
+  <section id="medications" class="card">
+    <h2>Medications</h2>
+    <input type="text" id="medName" placeholder="Medication Name">
+    <input type="text" id="medDosage" placeholder="Dosage">
+    <input type="time" id="medTime">
+    <button class="add-btn" onclick="addMed()">Add Medication</button>
+    <div id="medList"></div>
+  </section>
 
-<section id="medications">
-  <h2>Medication Reminder</h2>
-  <input type="text" id="med-name" placeholder="Medication Name">
-  <input type="text" id="med-dosage" placeholder="Dosage (e.g., 200mg)">
-  <input type="time" id="med-time">
-  <button class="submit-btn" onclick="addMedication()">Add Medication</button>
-  <ul id="med-list"></ul>
-</section>
+  <!-- Exercise Section -->
+  <section id="exercises" class="card">
+    <h2>Exercises</h2>
+    <input type="text" id="exName" placeholder="Exercise Name">
+    <input type="text" id="exDuration" placeholder="Duration/Time">
+    <button class="add-btn" onclick="addExercise()">Add Exercise</button>
+    <div id="exList"></div>
+  </section>
 
-<section id="exercises">
-  <h2>Exercises & Mobility</h2>
-  <input type="text" id="exercise-name" placeholder="Exercise Name (e.g., Knee Stretch)">
-  <input type="text" id="exercise-time" placeholder="Recommended Duration/Time">
-  <button class="submit-btn" onclick="addExercise()">Add Exercise</button>
-  <ul id="exercise-list"></ul>
-</section>
+  <!-- Care Circle Section -->
+  <section id="careCircle" class="card">
+    <h2>Care Circle</h2>
+    <textarea id="noteText" placeholder="Add a note for your loved one"></textarea>
+    <button class="add-btn" onclick="addNote()">Add Note</button>
+    <div id="noteList"></div>
+  </section>
 
-<section id="care-circle">
-  <h2>Care Circle</h2>
-  <p>Family and caregivers can add notes for the patient.</p>
-  <input type="text" id="family-note" placeholder="Add a note for your loved one">
-  <button class="submit-btn" onclick="addFamilyNote()">Add Note</button>
-  <ul id="family-list"></ul>
-</section>
+  <!-- Feedback Section -->
+  <section id="feedback" class="card">
+    <h2>Feedback</h2>
+    <input type="text" id="feedbackName" placeholder="Your Name (optional)">
+    <textarea id="feedbackText" placeholder="Your feedback"></textarea>
+    <button class="add-btn" onclick="submitFeedback()">Submit Feedback</button>
+  </section>
+</main>
 
-<!-- ================== Navigation Tabs ================== -->
+<!-- Navigation -->
 <nav>
-  <button class="tab-btn active" onclick="openTab('home', event)">Home</button>
-  <button class="tab-btn" onclick="openTab('pain-log', event)">Pain Log</button>
-  <button class="tab-btn" onclick="openTab('medications', event)">Medications</button>
-  <button class="tab-btn" onclick="openTab('exercises', event)">Exercises</button>
-  <button class="tab-btn" onclick="openTab('care-circle', event)">Care Circle</button>
+  <button class="active" onclick="showTab('home', this)">Home</button>
+  <button onclick="showTab('painLog', this)">Pain Log</button>
+  <button onclick="showTab('medications', this)">Medications</button>
+  <button onclick="showTab('exercises', this)">Exercises</button>
+  <button onclick="showTab('careCircle', this)">Care Circle</button>
+  <button onclick="showTab('feedback', this)">Feedback</button>
 </nav>
 
-<!-- ================== JavaScript ================== -->
 <script>
-  // ----------------- Tab Navigation -----------------
-  function openTab(tabId, event){
-    document.querySelectorAll('section').forEach(s => s.classList.remove('active'));
-    document.getElementById(tabId).classList.add('active');
+  // ------------------ Tabs ------------------
+  function showTab(id, btn) {
+    document.querySelectorAll('section').forEach(sec => sec.classList.remove('active'));
+    document.getElementById(id).classList.add('active');
     document.querySelectorAll('nav button').forEach(b => b.classList.remove('active'));
-    event.currentTarget.classList.add('active');
+    btn.classList.add('active');
   }
 
-  // ----------------- Load Persistent Data -----------------
-  window.onload = function() {
-    loadPainLogs();
-    loadMedications();
+  // ------------------ Pain Log ------------------
+  function loadPain() {
+    const data = JSON.parse(localStorage.getItem('painEntries') || '[]');
+    const container = document.getElementById('painEntries');
+    container.innerHTML = '';
+    data.forEach(entry => {
+      const div = document.createElement('div');
+      div.classList.add('entry');
+      div.innerHTML = `<strong>${entry.tags || 'General'}</strong>: ${entry.text} <br><small>${entry.date}</small>`;
+      container.appendChild(div);
+    });
+  }
+
+  function addPain() {
+    const text = document.getElementById('painText').value;
+    const tags = document.getElementById('painTags').value;
+    if (!text) return alert('Enter a description.');
+    const data = JSON.parse(localStorage.getItem('painEntries') || '[]');
+    data.push({ text, tags, date: new Date().toLocaleString() });
+    localStorage.setItem('painEntries', JSON.stringify(data));
+    document.getElementById('painText').value = '';
+    document.getElementById('painTags').value = '';
+    loadPain();
+  }
+  loadPain();
+
+  // ------------------ Medications ------------------
+  function loadMeds() {
+    const data = JSON.parse(localStorage.getItem('medications') || '[]');
+    const container = document.getElementById('medList');
+    container.innerHTML = '';
+    data.forEach(med => {
+      const div = document.createElement('div');
+      div.classList.add('entry');
+      div.textContent = `${med.name} - ${med.dosage} at ${med.time}`;
+      container.appendChild(div);
+    });
+  }
+
+  function addMed() {
+    const name = document.getElementById('medName').value;
+    const dosage = document.getElementById('medDosage').value;
+    const time = document.getElementById('medTime').value;
+    if (!name || !dosage || !time) return alert('Fill all fields.');
+    const data = JSON.parse(localStorage.getItem('medications') || '[]');
+    data.push({ name, dosage, time });
+    localStorage.setItem('medications', JSON.stringify(data));
+    document.getElementById('medName').value = '';
+    document.getElementById('medDosage').value = '';
+    document.getElementById('medTime').value = '';
+    loadMeds();
+  }
+  loadMeds();
+
+  // ------------------ Exercises ------------------
+  function loadExercises() {
+    const data = JSON.parse(localStorage.getItem('exercises') || '[]');
+    const container = document.getElementById('exList');
+    container.innerHTML = '';
+    data.forEach(ex => {
+      const div = document.createElement('div');
+      div.classList.add('entry');
+      div.textContent = `${ex.name} - ${ex.duration}`;
+      container.appendChild(div);
+    });
+  }
+
+  function addExercise() {
+    const name = document.getElementById('exName').value;
+    const duration = document.getElementById('exDuration').value;
+    if (!name || !duration) return alert('Fill all fields.');
+    const data = JSON.parse(localStorage.getItem('exercises') || '[]');
+    data.push({ name, duration });
+    localStorage.setItem('exercises', JSON.stringify(data));
+    document.getElementById('exName').value = '';
+    document.getElementById('exDuration').value = '';
     loadExercises();
-    loadFamilyNotes();
+  }
+  loadExercises();
+
+  // ------------------ Care Circle ------------------
+  function loadNotes() {
+    const data = JSON.parse(localStorage.getItem('careNotes') || '[]');
+    const container = document.getElementById('noteList');
+    container.innerHTML = '';
+    data.forEach(note => {
+      const div = document.createElement('div');
+      div.classList.add('entry');
+      div.innerHTML = `${note.text} <br><small>${note.date}</small>`;
+      container.appendChild(div);
+    });
   }
 
-  // ----------------- Pain Log -----------------
-  function addPainEntry(){
-    const input = document.getElementById('pain-input').value;
-    const tags = document.getElementById('pain-tags').value;
-    if(!input){ alert("Please enter pain description."); return; }
+  function addNote() {
+    const text = document.getElementById('noteText').value;
+    if (!text) return alert('Enter a note.');
+    const data = JSON.parse(localStorage.getItem('careNotes') || '[]');
+    data.push({ text, date: new Date().toLocaleString() });
+    localStorage.setItem('careNotes', JSON.stringify(data));
+    document.getElementById('noteText').value = '';
+    loadNotes();
+  }
+  loadNotes();
 
-    const entry = { text: input, tags: tags, timestamp: new Date().toLocaleString() };
-    let logs = JSON.parse(localStorage.getItem('painLogs')) || [];
-    logs.push(entry);
-    localStorage.setItem('painLogs', JSON.stringify(logs));
-    displayPainLog(entry);
-    document.getElementById('pain-input').value = '';
-    document.getElementById('pain-tags').value = '';
-  }
-  function displayPainLog(entry){
-    const li = document.createElement('li');
-    li.textContent = `${entry.timestamp}: ${entry.text}` + (entry.tags ? ` (${entry.tags})` : '');
-    document.getElementById('pain-list').appendChild(li);
-  }
-  function loadPainLogs(){
-    let logs = JSON.parse(localStorage.getItem('painLogs')) || [];
-    logs.forEach(displayPainLog);
-  }
-
-  // ----------------- Medications -----------------
-  function addMedication(){
-    const name = document.getElementById('med-name').value;
-    const dose = document.getElementById('med-dosage').value;
-    const time = document.getElementById('med-time').value;
-    if(!name || !dose || !time){ alert("Please fill all fields."); return; }
-
-    const med = { name, dose, time };
-    let meds = JSON.parse(localStorage.getItem('medications')) || [];
-    meds.push(med);
-    localStorage.setItem('medications', JSON.stringify(meds));
-    displayMedication(med);
-    document.getElementById('med-name').value = '';
-    document.getElementById('med-dosage').value = '';
-    document.getElementById('med-time').value = '';
-  }
-  function displayMedication(med){
-    const li = document.createElement('li');
-    li.textContent = `${med.name} - ${med.dose} at ${med.time}`;
-    document.getElementById('med-list').appendChild(li);
-  }
-  function loadMedications(){
-    let meds = JSON.parse(localStorage.getItem('medications')) || [];
-    meds.forEach(displayMedication);
-  }
-
-  // ----------------- Exercises -----------------
-  function addExercise(){
-    const name = document.getElementById('exercise-name').value;
-    const duration = document.getElementById('exercise-time').value;
-    if(!name || !duration){ alert("Please fill all fields."); return; }
-
-    const exercise = { name, duration };
-    let exercises = JSON.parse(localStorage.getItem('exercises')) || [];
-    exercises.push(exercise);
-    localStorage.setItem('exercises', JSON.stringify(exercises));
-    displayExercise(exercise);
-    document.getElementById('exercise-name').value = '';
-    document.getElementById('exercise-time').value = '';
-  }
-  function displayExercise(exercise){
-    const li = document.createElement('li');
-    li.textContent = `${exercise.name} - ${exercise.duration}`;
-    document.getElementById('exercise-list').appendChild(li);
-  }
-  function loadExercises(){
-    let exercises = JSON.parse(localStorage.getItem('exercises')) || [];
-    exercises.forEach(displayExercise);
-  }
-
-  // ----------------- Care Circle -----------------
-  function addFamilyNote(){
-    const note = document.getElementById('family-note').value;
-    if(!note){ alert("Please enter a note."); return; }
-
-    const noteObj = { text: note, timestamp: new Date().toLocaleString() };
-    let notes = JSON.parse(localStorage.getItem('familyNotes')) || [];
-    notes.push(noteObj);
-    localStorage.setItem('familyNotes', JSON.stringify(notes));
-    displayFamilyNote(noteObj);
-    document.getElementById('family-note').value = '';
-  }
-  function displayFamilyNote(noteObj){
-    const li = document.createElement('li');
-    li.textContent = `${noteObj.timestamp}: ${noteObj.text}`;
-    document.getElementById('family-list').appendChild(li);
-  }
-  function loadFamilyNotes(){
-    let notes = JSON.parse(localStorage.getItem('familyNotes')) || [];
-    notes.forEach(displayFamilyNote);
+  // ------------------ Feedback ------------------
+  function submitFeedback() {
+    const name = document.getElementById('feedbackName').value;
+    const text = document.getElementById('feedbackText').value;
+    if (!text) return alert('Enter feedback.');
+    // For prototype, just log to console (or later connect to Google Forms)
+    console.log('Feedback:', { name, text });
+    alert('Thank you for your feedback!');
+    document.getElementById('feedbackName').value = '';
+    document.getElementById('feedbackText').value = '';
   }
 
 </script>
-
 </body>
 </html>
-

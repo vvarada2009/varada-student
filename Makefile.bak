@@ -102,8 +102,8 @@ cspserver: stop cspconvert
 	@@until [ -f $(LOG_FILE) ]; do sleep 1; done
 
 # Convert .ipynb files to Markdown with front matter
-convert:
-	@echo "Skipping notebook conversion (no notebooks found)."
+convert: $(MARKDOWN_FILES)
+cspconvert: $(CSP_MARKDOWN_FILES)
 
 # Convert .ipynb files to Markdown with front matter, preserving directory structure
 $(DESTINATION_DIRECTORY)/%_IPYNB_2_.md: _notebooks/%.ipynb

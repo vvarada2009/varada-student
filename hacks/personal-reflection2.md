@@ -145,3 +145,19 @@ What I learnt: I learned that careful placement of increment statements is impor
 
 ### Future Action: 
 
+I will go back and review these topics to strengthen my understanding of both specific skills and broader computer science concepts. Specifically, I will:
+
+Broader Topic Areas:
+
+-Algorithms and Program Logic – tracing loops, conditionals, and variable updates; understanding flowcharts and translating them to code.
+
+-Data Structures and Loops – using lists, loops, and counters effectively in simulations and calculations.
+
+-Boolean Logic and Decision Making – applying AND, OR, and conditional statements correctly.
+
+-Probability and Randomness – using random numbers in simulations and games, and understanding probability-based outcomes.
+
+-Networks and Communication – redundant routing, fault tolerance, and protocols in network configurations.
+
+-Number Systems and Data Representation – converting decimal numbers to binary, especially for RGB color codes.
+

@@ -6,7 +6,7 @@ permalink: /review-mc-blog/
 Topics: 
 
 
-<img src="../images/cbmc/skill.png" width="800">
+<img src="../images/cbmc/skill.png" width="600">
 
 Most missed topics: 
 

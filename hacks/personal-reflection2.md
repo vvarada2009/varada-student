@@ -21,7 +21,7 @@ Most missed topics:
 -Fault Tolerance
 
 
-Corrections of Missed Questions: 
+## Corrections of Missed Questions: 
 
 2) 
 
@@ -167,7 +167,7 @@ Why: This line should be removed. The variable count should increase by 1�
 What I learnt: I learned that careful placement of increment statements is important in loops. Incrementing currentNum inside the IF statement causes some numbers to be skipped, so removing that line ensures every number from start to end is checked correctly.
 
 
-### Future Action: 
+## Future Action: 
 
 
 I will go back and review these topics to strengthen my understanding of both specific skills and broader computer science concepts. Specifically, I will:

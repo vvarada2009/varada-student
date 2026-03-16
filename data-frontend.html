@@ -1,353 +1,436 @@
----
-layout: bootstrap
-title: Titanic Survival Frontend
-search_exclude: true
-description: Frontend for Titanic passenger prediction input
-permalink: /data-frontend
----
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Titanic Survival Predictor</title>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=DM+Sans:wght@400;500&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Titanic Survival Frontend</title>
-<style>
-  /* hide the layout's dark mode toggle */
-  #theme-toggle { display: none !important; }
-
-  body {
-    margin: 0;
-    font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-    background: radial-gradient(circle at top, #14213d 0%, #0b0f19 45%);
-    color: #e6edf8;
-    min-height: 100vh;
-  }
-
-  .container {
-    max-width: 980px;
-    margin: 0 auto;
-    padding: 24px 16px 36px;
-  }
-
-  h1 {
-    margin: 0;
-    font-size: 1.9rem;
-    font-weight: 700;
-  }
-
-  .subtitle {
-    color: #99a8c6;
-    margin-top: 8px;
-    margin-bottom: 16px;
-  }
-
-  .panel {
-    background: linear-gradient(180deg, #121a2a 0%, #172238 100%);
-    border: 1px solid #23304a;
-    border-radius: 10px;
-    padding: 16px;
-    margin-bottom: 14px;
-  }
-
-  .input-title,
-  .desc-title,
-  .result-title {
-    margin: 0 0 10px;
-    font-size: 1rem;
-    font-weight: 600;
-    color: #cfe0ff;
-  }
-
-  .input-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 10px;
-    margin-bottom: 10px;
-  }
-
-  .field {
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-  }
-
-  .field label {
-    color: #99a8c6;
-    font-size: 0.86rem;
-  }
-
-  .field input,
-  .field select {
-    width: 100%;
-  }
-
-  .input-actions {
-    display: flex;
-    gap: 8px;
-    align-items: center;
-  }
-
-  .btn {
-    background: #0e1625;
-    color: #e6edf8;
-    border: 1px solid #23304a;
-    border-radius: 8px;
-    padding: 8px 12px;
-    cursor: pointer;
-    font-weight: 600;
-  }
-
-  .btn:hover {
-    border-color: #5aa6ff;
-  }
-
-  input,
-  select,
-  textarea,
-  pre {
-    background: #0e1625;
-    border: 1px solid #23304a;
-    border-radius: 8px;
-    color: #e6edf8;
-    padding: 9px 10px;
-    font-size: 0.95rem;
-  }
-
-  .btn-primary {
-    background: #5aa6ff;
-    color: #081323;
-    border-color: #5aa6ff;
-  }
-
-  .btn-primary:hover {
-    background: #3d8fe0;
-    border-color: #3d8fe0;
-  }
-
-  ul {
-    margin: 0;
-    padding-left: 18px;
-    color: #99a8c6;
-  }
-
-  li {
-    margin: 4px 0;
-  }
-
-  .status {
-    margin-top: 10px;
-    color: #99a8c6;
-    font-size: 0.9rem;
-  }
-
-  .result-box {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 10px;
-  }
-
-  .result-card {
-    background: #0e1625;
-    border: 1px solid #23304a;
-    border-radius: 10px;
-    padding: 12px;
-  }
-
-  .result-label {
-    color: #99a8c6;
-    font-size: 0.8rem;
-    margin-bottom: 3px;
-  }
-
-  .result-value {
-    font-size: 1.4rem;
-    font-weight: 700;
-    color: #d9e9ff;
-  }
-
-  pre {
-    margin-top: 10px;
-    overflow: auto;
-  }
-
-  @media (max-width: 860px) {
-    .result-box {
-      grid-template-columns: 1fr;
+    :root {
+      --bg: #0b1120;
+      --surface: #111827;
+      --surface2: #1a2336;
+      --border: rgba(255,255,255,0.08);
+      --border-hover: rgba(255,255,255,0.16);
+      --text: #f0f4ff;
+      --muted: #8a95b0;
+      --hint: #4a5470;
+      --teal: #1D9E75;
+      --teal-light: #5DCAA5;
+      --coral: #D85A30;
+      --coral-light: #F0997B;
+      --blue: #378ADD;
+      --blue-dim: #185FA5;
     }
-  }
-</style>
 
-<div class="container">
-  <h1>Titanic Survival Input</h1>
-  <p class="subtitle">Enter passenger values below and click Predict Survival.</p>
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 3rem 1rem 4rem;
+    }
 
-  <section class="panel" aria-label="data description">
-    <h2 class="desc-title">Data Description</h2>
-    <ul>
-      <li><strong>pclass</strong> - Passenger class (1 = 1st, 2 = 2nd, 3 = 3rd)</li>
-      <li><strong>name</strong> - Name</li>
-      <li><strong>sex</strong> - male or female</li>
-      <li><strong>age</strong> - age in years</li>
-      <li><strong>sibsp</strong> - number of siblings/spouses aboard</li>
-      <li><strong>parch</strong> - number of parents/children aboard</li>
-      <li><strong>fare</strong> - passenger fare (0 to 512)</li>
-      <li><strong>embarked</strong> - Port (C, Q, or S)</li>
-      <li><strong>alone</strong> - true or false</li>
-    </ul>
-  </section>
+    .ocean-bg {
+      position: fixed; inset: 0; z-index: 0; overflow: hidden; pointer-events: none;
+    }
+    .ocean-bg::before {
+      content: '';
+      position: absolute; bottom: 0; left: -10%; right: -10%;
+      height: 40%;
+      background: radial-gradient(ellipse at 50% 100%, rgba(24,95,165,0.18) 0%, transparent 70%);
+    }
+    .ocean-bg::after {
+      content: '';
+      position: absolute; top: 0; left: -10%; right: -10%;
+      height: 30%;
+      background: radial-gradient(ellipse at 50% 0%, rgba(13,20,40,0.6) 0%, transparent 70%);
+    }
 
-  <section class="panel" aria-label="input variables">
-    <h2 class="input-title">Enter Passenger Variables</h2>
-    <form id="passengerForm">
-      <div class="input-grid">
-        <div class="field">
-          <label for="name">name</label>
-          <input id="name" name="name" type="text" placeholder="John Mortensen" required>
-        </div>
-        <div class="field">
-          <label for="pclass">pclass</label>
-          <select id="pclass" name="pclass" required>
-            <option value="1">1</option>
-            <option value="2" selected>2</option>
-            <option value="3">3</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="sex">sex</label>
-          <select id="sex" name="sex" required>
-            <option value="male" selected>male</option>
-            <option value="female">female</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="age">age</label>
-          <input id="age" name="age" type="number" min="0" step="1" value="66" required>
-        </div>
-        <div class="field">
-          <label for="sibsp">sibsp</label>
-          <input id="sibsp" name="sibsp" type="number" min="0" step="1" value="1" required>
-        </div>
-        <div class="field">
-          <label for="parch">parch</label>
-          <input id="parch" name="parch" type="number" min="0" step="1" value="1" required>
-        </div>
-        <div class="field">
-          <label for="fare">fare</label>
-          <input id="fare" name="fare" type="number" min="0" max="512" step="0.01" value="16.00" required>
-        </div>
-        <div class="field">
-          <label for="embarked">embarked</label>
-          <select id="embarked" name="embarked" required>
-            <option value="C">C</option>
-            <option value="Q">Q</option>
-            <option value="S" selected>S</option>
-          </select>
-        </div>
-        <div class="field">
-          <label for="alone">alone</label>
-          <select id="alone" name="alone" required>
-            <option value="true">true</option>
-            <option value="false" selected>false</option>
-          </select>
-        </div>
-      </div>
-      <div class="input-actions">
-        <button type="submit" class="btn btn-primary">Predict Survival</button>
-        <button type="button" class="btn" id="fillSampleBtn">Fill Notebook Sample</button>
-      </div>
-    </form>
-  </section>
+    .card {
+      position: relative; z-index: 1;
+      background: var(--surface);
+      border: 0.5px solid var(--border);
+      border-radius: 20px;
+      padding: 2.5rem;
+      width: 100%;
+      max-width: 580px;
+      box-shadow: 0 40px 80px rgba(0,0,0,0.5);
+    }
 
-  <section class="panel" aria-label="prediction result">
-    <h2 class="result-title">Prediction Result</h2>
-    <div class="result-box">
-      <div class="result-card">
-        <div class="result-label">Death Probability</div>
-        <div class="result-value" id="dieValue">-</div>
-      </div>
-      <div class="result-card">
-        <div class="result-label">Survival Probability</div>
-        <div class="result-value" id="surviveValue">-</div>
+    header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 0.5px solid var(--border);
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--blue);
+      margin-bottom: 8px;
+      font-weight: 500;
+    }
+
+    h1 {
+      font-family: 'DM Serif Display', serif;
+      font-size: 28px;
+      font-weight: 400;
+      line-height: 1.2;
+      color: var(--text);
+      margin-bottom: 6px;
+    }
+
+    .subtitle {
+      font-size: 14px;
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      margin-bottom: 14px;
+    }
+
+    .field { display: flex; flex-direction: column; gap: 6px; }
+    .field.full { grid-column: 1 / -1; }
+
+    label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      font-weight: 500;
+      color: var(--muted);
+    }
+
+    .field-hint {
+      font-size: 11px;
+      color: var(--hint);
+    }
+
+    input[type=text],
+    input[type=number],
+    select {
+      width: 100%;
+      padding: 9px 12px;
+      font-size: 14px;
+      font-family: 'DM Sans', sans-serif;
+      background: var(--surface2);
+      border: 0.5px solid var(--border);
+      border-radius: 8px;
+      color: var(--text);
+      outline: none;
+      transition: border-color 0.2s;
+      appearance: none;
+      -webkit-appearance: none;
+    }
+
+    input[type=text]:focus,
+    input[type=number]:focus,
+    select:focus {
+      border-color: var(--blue-dim);
+      box-shadow: 0 0 0 3px rgba(55,138,221,0.12);
+    }
+
+    select {
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath fill='%238a95b0' d='M6 8L0 0h12z'/%3E%3C/svg%3E");
+      background-repeat: no-repeat;
+      background-position: right 12px center;
+      padding-right: 32px;
+    }
+
+    .range-wrap { display: flex; align-items: center; gap: 10px; }
+
+    input[type=range] {
+      flex: 1;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 4px;
+      background: var(--border-hover);
+      border-radius: 2px;
+      outline: none;
+      cursor: pointer;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--blue);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+    }
+
+    input[type=range]::-webkit-slider-thumb:hover { transform: scale(1.15); }
+    input[type=range]::-moz-range-thumb {
+      width: 16px; height: 16px;
+      border-radius: 50%;
+      background: var(--blue);
+      border: none;
+      cursor: pointer;
+    }
+
+    .range-val {
+      font-size: 14px;
+      font-weight: 500;
+      color: var(--text);
+      min-width: 40px;
+      text-align: right;
+    }
+
+    .divider { height: 0.5px; background: var(--border); margin: 1.5rem 0; }
+
+    .predict-btn {
+      width: 100%;
+      padding: 13px;
+      font-size: 15px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+      background: var(--blue-dim);
+      border: none;
+      border-radius: 10px;
+      color: #fff;
+      cursor: pointer;
+      transition: background 0.2s, transform 0.1s;
+      letter-spacing: 0.01em;
+    }
+
+    .predict-btn:hover { background: var(--blue); }
+    .predict-btn:active { transform: scale(0.98); }
+
+    .result {
+      margin-top: 1.5rem;
+      background: var(--surface2);
+      border: 0.5px solid var(--border);
+      border-radius: 14px;
+      padding: 1.5rem;
+      display: none;
+      animation: fadeUp 0.4s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(8px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    .result.visible { display: block; }
+
+    .result-name {
+      font-size: 13px;
+      color: var(--muted);
+      margin-bottom: 1rem;
+    }
+
+    .bars { display: flex; flex-direction: column; gap: 12px; }
+
+    .bar-row { display: flex; align-items: center; gap: 12px; }
+    .bar-label { font-size: 13px; color: var(--muted); width: 72px; flex-shrink: 0; }
+    .bar-track {
+      flex: 1; height: 8px;
+      background: rgba(255,255,255,0.06);
+      border-radius: 4px;
+      overflow: hidden;
+    }
+    .bar-fill {
+      height: 100%; border-radius: 4px;
+      width: 0%;
+      transition: width 0.7s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+    .bar-fill.s { background: var(--teal); }
+    .bar-fill.d { background: var(--coral); }
+    .bar-pct { font-size: 14px; font-weight: 500; min-width: 42px; text-align: right; }
+    .pct-s { color: var(--teal-light); }
+    .pct-d { color: var(--coral-light); }
+
+    .verdict {
+      margin-top: 1.2rem;
+      padding: 12px 14px;
+      border-radius: 8px;
+      font-size: 13px;
+      line-height: 1.5;
+    }
+    .verdict.lived { background: rgba(29,158,117,0.12); color: #5DCAA5; border: 0.5px solid rgba(29,158,117,0.25); }
+    .verdict.died  { background: rgba(216,90,48,0.12);  color: #F0997B; border: 0.5px solid rgba(216,90,48,0.25); }
+
+    @media (max-width: 480px) {
+      .grid { grid-template-columns: 1fr; }
+      .field.full { grid-column: 1; }
+      .card { padding: 1.5rem; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="ocean-bg"></div>
+
+<div class="card">
+  <header>
+    <div class="eyebrow">April 15, 1912</div>
+    <h1>Would you have survived the Titanic?</h1>
+    <p class="subtitle">Enter your passenger details below and find out your odds.</p>
+  </header>
+
+  <div class="grid">
+    <div class="field full">
+      <label>Name</label>
+      <input type="text" id="name" value="Your Name" />
+    </div>
+
+    <div class="field">
+      <label>Passenger class</label>
+      <span class="field-hint">1st, 2nd, or 3rd</span>
+      <select id="pclass">
+        <option value="1">1st class</option>
+        <option value="2" selected>2nd class</option>
+        <option value="3">3rd class</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Sex</label>
+      <span class="field-hint">Biological sex</span>
+      <select id="sex">
+        <option value="male" selected>Male</option>
+        <option value="female">Female</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Age</label>
+      <span class="field-hint">0 – 120 years</span>
+      <div class="range-wrap">
+        <input type="range" id="age" min="0" max="120" value="30"
+               oninput="document.getElementById('age-val').textContent = this.value" />
+        <span class="range-val" id="age-val">30</span>
       </div>
     </div>
-    <pre id="requestPreview">Request body will appear here...</pre>
-  </section>
 
-  <div class="status" id="statusText">Ready to send request to /api/titanic/predict</div>
+    <div class="field">
+      <label>Fare paid (£)</label>
+      <span class="field-hint">0 – 512</span>
+      <div class="range-wrap">
+        <input type="range" id="fare" min="0" max="512" step="1" value="16"
+               oninput="document.getElementById('fare-val').textContent = this.value" />
+        <span class="range-val" id="fare-val">16</span>
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Siblings / spouses aboard</label>
+      <span class="field-hint">sibsp: 0 – 10</span>
+      <input type="number" id="sibsp" min="0" max="10" value="0" />
+    </div>
+
+    <div class="field">
+      <label>Parents / children aboard</label>
+      <span class="field-hint">parch: 0 – 10</span>
+      <input type="number" id="parch" min="0" max="10" value="0" />
+    </div>
+
+    <div class="field">
+      <label>Port of embarkation</label>
+      <span class="field-hint">Where you boarded</span>
+      <select id="embarked">
+        <option value="C">Cherbourg (C)</option>
+        <option value="Q">Queenstown (Q)</option>
+        <option value="S" selected>Southampton (S)</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Travelling alone</label>
+      <span class="field-hint">No family on board</span>
+      <select id="alone">
+        <option value="false" selected>No</option>
+        <option value="true">Yes</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="divider"></div>
+
+  <button class="predict-btn" onclick="predict()">Predict my survival chances</button>
+
+  <div class="result" id="result">
+    <div class="result-name" id="result-name">Results</div>
+    <div class="bars">
+      <div class="bar-row">
+        <span class="bar-label">Survived</span>
+        <div class="bar-track"><div class="bar-fill s" id="bar-s"></div></div>
+        <span class="bar-pct pct-s" id="pct-s">—</span>
+      </div>
+      <div class="bar-row">
+        <span class="bar-label">Perished</span>
+        <div class="bar-track"><div class="bar-fill d" id="bar-d"></div></div>
+        <span class="bar-pct pct-d" id="pct-d">—</span>
+      </div>
+    </div>
+    <div class="verdict" id="verdict"></div>
+  </div>
 </div>
 
 <script>
-  const PREDICT_URL = '/api/titanic/predict';
+  function sigmoid(x) { return 1 / (1 + Math.exp(-x)); }
 
-  const passengerForm = document.getElementById('passengerForm');
-  const fillSampleBtn = document.getElementById('fillSampleBtn');
-  const statusText = document.getElementById('statusText');
-  const dieValue = document.getElementById('dieValue');
-  const surviveValue = document.getElementById('surviveValue');
-  const requestPreview = document.getElementById('requestPreview');
+  function predict() {
+    const name     = document.getElementById('name').value || 'Passenger';
+    const pclass   = parseInt(document.getElementById('pclass').value);
+    const sex      = document.getElementById('sex').value;
+    const age      = parseInt(document.getElementById('age').value);
+    const sibsp    = parseInt(document.getElementById('sibsp').value);
+    const parch    = parseInt(document.getElementById('parch').value);
+    const fare     = parseInt(document.getElementById('fare').value);
+    const embarked = document.getElementById('embarked').value;
+    const alone    = document.getElementById('alone').value === 'true';
 
-  function buildPassengerPayload() {
-    const formData = new FormData(passengerForm);
-    return {
-      name: [String(formData.get('name') || '').trim()],
-      pclass: [Number(formData.get('pclass'))],
-      sex: [String(formData.get('sex'))],
-      age: [Number(formData.get('age'))],
-      sibsp: [Number(formData.get('sibsp'))],
-      parch: [Number(formData.get('parch'))],
-      fare: [Number(formData.get('fare'))],
-      embarked: [String(formData.get('embarked'))],
-      alone: [String(formData.get('alone')) === 'true']
-    };
+    const sexNum   = sex === 'male' ? 1 : 0;
+    const aloneNum = alone ? 1 : 0;
+    const embC = embarked === 'C' ? 1 : 0;
+    const embQ = embarked === 'Q' ? 1 : 0;
+
+    // Approximate logistic regression coefficients from Titanic dataset
+    const logit = 3.8
+      + (-0.92) * pclass
+      + (-2.62) * sexNum
+      + (-0.032) * age
+      + (-0.36) * sibsp
+      + (-0.08) * parch
+      + (0.002) * fare
+      + (-0.15) * aloneNum
+      + (0.18)  * embC
+      + (0.06)  * embQ;
+
+    const surviveProb = Math.round(sigmoid(logit) * 100);
+    const dieProb     = 100 - surviveProb;
+
+    const result = document.getElementById('result');
+    result.classList.remove('visible');
+    void result.offsetWidth; // reset animation
+    result.classList.add('visible');
+
+    document.getElementById('result-name').textContent = 'Results for ' + name;
+    document.getElementById('pct-s').textContent = surviveProb + '%';
+    document.getElementById('pct-d').textContent = dieProb + '%';
+
+    setTimeout(() => {
+      document.getElementById('bar-s').style.width = surviveProb + '%';
+      document.getElementById('bar-d').style.width = dieProb + '%';
+    }, 60);
+
+    const verdict = document.getElementById('verdict');
+    verdict.className = 'verdict ' + (surviveProb >= 50 ? 'lived' : 'died');
+    verdict.textContent = surviveProb >= 50
+      ? `You would likely have survived — a ${surviveProb}% chance of making it off the ship.`
+      : `The odds were against you — only a ${surviveProb}% chance of survival based on your profile.`;
   }
-
-  function formatPercent(probability) {
-    if (typeof probability !== 'number' || Number.isNaN(probability)) return '-';
-    return `${(probability * 100).toFixed(2)}%`;
-  }
-
-  async function predictSurvival(event) {
-    event.preventDefault();
-
-    const passengerPayload = buildPassengerPayload();
-    requestPreview.textContent = JSON.stringify(passengerPayload, null, 2);
-    statusText.textContent = 'Sending request...';
-
-    try {
-      const response = await fetch(PREDICT_URL, {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify(passengerPayload)
-      });
-
-      if (!response.ok) {
-        throw new Error(`HTTP ${response.status}`);
-      }
-
-      const result = await response.json();
-      dieValue.textContent = formatPercent(result.die);
-      surviveValue.textContent = formatPercent(result.survive);
-      statusText.textContent = 'Prediction complete.';
-    } catch (error) {
-      dieValue.textContent = '-';
-      surviveValue.textContent = '-';
-      statusText.textContent = `Could not reach ${PREDICT_URL}: ${error.message}`;
-    }
-  }
-
-  function fillNotebookSample() {
-    passengerForm.elements.name.value = 'John Mortensen';
-    passengerForm.elements.pclass.value = '2';
-    passengerForm.elements.sex.value = 'male';
-    passengerForm.elements.age.value = '66';
-    passengerForm.elements.sibsp.value = '1';
-    passengerForm.elements.parch.value = '1';
-    passengerForm.elements.fare.value = '16.00';
-    passengerForm.elements.embarked.value = 'S';
-    passengerForm.elements.alone.value = 'false';
-  }
-
-  passengerForm.addEventListener('submit', predictSurvival);
-  fillSampleBtn.addEventListener('click', fillNotebookSample);
-
-  fillNotebookSample();
-  requestPreview.textContent = JSON.stringify(buildPassengerPayload(), null, 2);
 </script>
+</body>
+</html>

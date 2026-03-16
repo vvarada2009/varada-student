@@ -1,14 +1,14 @@
 ---
 layout: bootstrap
-title: Data Frontend
+title: Titanic Survival Frontend
 search_exclude: true
-description: Frontend for viewing CSV data
+description: Frontend for Titanic passenger prediction input
 permalink: /data-frontend
 ---
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Data Frontend</title>
+<title>Titanic Survival Frontend</title>
 <style>
   :root {
     --bg: #0b0f19;
@@ -46,29 +46,17 @@ permalink: /data-frontend
     margin-bottom: 22px;
   }
 
-  .controls,
-  .input-panel,
-  .stats,
-  .table-wrap {
+  .panel {
     background: linear-gradient(180deg, var(--panel) 0%, var(--panel-2) 100%);
     border: 1px solid var(--border);
     border-radius: 14px;
     padding: 14px;
-  }
-
-  .controls {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    align-items: center;
     margin-bottom: 12px;
   }
 
-  .input-panel {
-    margin-bottom: 12px;
-  }
-
-  .input-title {
+  .input-title,
+  .desc-title,
+  .result-title {
     margin: 0 0 10px;
     font-size: 1rem;
     font-weight: 600;
@@ -77,12 +65,24 @@ permalink: /data-frontend
 
   .input-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     gap: 10px;
     margin-bottom: 10px;
   }
 
-  .input-grid input {
+  .field {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .field label {
+    color: var(--muted);
+    font-size: 0.86rem;
+  }
+
+  .field input,
+  .field select {
     width: 100%;
   }
 
@@ -107,7 +107,9 @@ permalink: /data-frontend
   }
 
   input,
-  select {
+  select,
+  textarea,
+  pre {
     background: #0e1625;
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -116,66 +118,25 @@ permalink: /data-frontend
     font-size: 0.95rem;
   }
 
-  input {
-    flex: 1 1 240px;
+  .btn-primary {
+    background: var(--accent);
+    color: #081323;
+    border-color: var(--accent);
   }
 
-  .stats {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 10px;
-    margin-bottom: 12px;
+  .btn-primary:hover {
+    filter: brightness(1.05);
+    border-color: var(--accent);
   }
 
-  .stat {
-    background: #0e1625;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 12px;
-  }
-
-  .stat-label {
+  ul {
+    margin: 0;
+    padding-left: 18px;
     color: var(--muted);
-    font-size: 0.8rem;
-    margin-bottom: 3px;
   }
 
-  .stat-value {
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: #d9e9ff;
-  }
-
-  .table-wrap {
-    overflow: auto;
-  }
-
-  table {
-    width: 100%;
-    border-collapse: collapse;
-    min-width: 700px;
-  }
-
-  th,
-  td {
-    padding: 10px 12px;
-    border-bottom: 1px solid var(--border);
-    text-align: left;
-    font-size: 0.95rem;
-  }
-
-  th {
-    color: #cfe0ff;
-    background: #101b30;
-    position: sticky;
-    top: 0;
-    cursor: pointer;
-    user-select: none;
-    white-space: nowrap;
-  }
-
-  tr:hover td {
-    background: rgba(90, 166, 255, 0.06);
+  li {
+    margin: 4px 0;
   }
 
   .status {
@@ -184,255 +145,216 @@ permalink: /data-frontend
     font-size: 0.9rem;
   }
 
+  .result-box {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .result-card {
+    background: #0e1625;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 12px;
+  }
+
+  .result-label {
+    color: var(--muted);
+    font-size: 0.8rem;
+    margin-bottom: 3px;
+  }
+
+  .result-value {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: #d9e9ff;
+  }
+
+  pre {
+    margin-top: 10px;
+    overflow: auto;
+  }
+
   @media (max-width: 860px) {
-    .stats {
-      grid-template-columns: repeat(2, minmax(0, 1fr));
+    .result-box {
+      grid-template-columns: 1fr;
     }
   }
 </style>
 
 <div class="container">
-  <h1>Data Frontend</h1>
-  <p class="subtitle">Interactive view of <code>_notebooks/big-idea-2/data/data.csv</code></p>
+  <h1>Titanic Survival Input</h1>
+  <p class="subtitle">Type your passenger variables and run a prediction like the notebook section “Would I have survived the Titanic?”</p>
 
-  <section class="controls" aria-label="controls">
-    <input id="searchInput" type="text" placeholder="Search rows...">
-    <select id="columnSelect" aria-label="column filter">
-      <option value="all">All columns</option>
-    </select>
+  <section class="panel" aria-label="data description">
+    <h2 class="desc-title">Data Description</h2>
+    <ul>
+      <li><strong>pclass</strong> - Passenger class (1 = 1st, 2 = 2nd, 3 = 3rd)</li>
+      <li><strong>name</strong> - Name</li>
+      <li><strong>sex</strong> - male or female</li>
+      <li><strong>age</strong> - age in years</li>
+      <li><strong>sibsp</strong> - number of siblings/spouses aboard</li>
+      <li><strong>parch</strong> - number of parents/children aboard</li>
+      <li><strong>fare</strong> - passenger fare (0 to 512)</li>
+      <li><strong>embarked</strong> - Port (C, Q, or S)</li>
+      <li><strong>alone</strong> - true or false</li>
+    </ul>
   </section>
 
-  <section class="input-panel" aria-label="input variables">
-    <h2 class="input-title">Input Variables by Category</h2>
-    <form id="rowForm">
-      <div class="input-grid" id="inputGrid"></div>
+  <section class="panel" aria-label="input variables">
+    <h2 class="input-title">Enter Passenger Variables</h2>
+    <form id="passengerForm">
+      <div class="input-grid">
+        <div class="field">
+          <label for="name">name</label>
+          <input id="name" name="name" type="text" placeholder="John Mortensen" required>
+        </div>
+        <div class="field">
+          <label for="pclass">pclass</label>
+          <select id="pclass" name="pclass" required>
+            <option value="1">1</option>
+            <option value="2" selected>2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="sex">sex</label>
+          <select id="sex" name="sex" required>
+            <option value="male" selected>male</option>
+            <option value="female">female</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="age">age</label>
+          <input id="age" name="age" type="number" min="0" step="1" value="66" required>
+        </div>
+        <div class="field">
+          <label for="sibsp">sibsp</label>
+          <input id="sibsp" name="sibsp" type="number" min="0" step="1" value="1" required>
+        </div>
+        <div class="field">
+          <label for="parch">parch</label>
+          <input id="parch" name="parch" type="number" min="0" step="1" value="1" required>
+        </div>
+        <div class="field">
+          <label for="fare">fare</label>
+          <input id="fare" name="fare" type="number" min="0" max="512" step="0.01" value="16.00" required>
+        </div>
+        <div class="field">
+          <label for="embarked">embarked</label>
+          <select id="embarked" name="embarked" required>
+            <option value="C">C</option>
+            <option value="Q">Q</option>
+            <option value="S" selected>S</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="alone">alone</label>
+          <select id="alone" name="alone" required>
+            <option value="true">true</option>
+            <option value="false" selected>false</option>
+          </select>
+        </div>
+      </div>
       <div class="input-actions">
-        <button type="submit" class="btn">Add Row</button>
-        <button type="button" class="btn" id="clearFormBtn">Clear</button>
+        <button type="submit" class="btn btn-primary">Predict Survival</button>
+        <button type="button" class="btn" id="fillSampleBtn">Fill Notebook Sample</button>
       </div>
     </form>
   </section>
 
-  <section class="stats" aria-label="summary stats">
-    <div class="stat">
-      <div class="stat-label">Rows</div>
-      <div class="stat-value" id="rowsStat">0</div>
+  <section class="panel" aria-label="prediction result">
+    <h2 class="result-title">Prediction Result</h2>
+    <div class="result-box">
+      <div class="result-card">
+        <div class="result-label">Death Probability</div>
+        <div class="result-value" id="dieValue">-</div>
+      </div>
+      <div class="result-card">
+        <div class="result-label">Survival Probability</div>
+        <div class="result-value" id="surviveValue">-</div>
+      </div>
     </div>
-    <div class="stat">
-      <div class="stat-label">Columns</div>
-      <div class="stat-value" id="columnsStat">0</div>
-    </div>
-    <div class="stat">
-      <div class="stat-label">Avg Duration</div>
-      <div class="stat-value" id="avgDurationStat">-</div>
-    </div>
-    <div class="stat">
-      <div class="stat-label">Avg Calories</div>
-      <div class="stat-value" id="avgCaloriesStat">-</div>
-    </div>
+    <pre id="requestPreview">Request body will appear here...</pre>
   </section>
 
-  <section class="table-wrap" aria-label="data table">
-    <table>
-      <thead>
-        <tr id="tableHead"></tr>
-      </thead>
-      <tbody id="tableBody"></tbody>
-    </table>
-  </section>
-
-  <div class="status" id="statusText">Loading data...</div>
+  <div class="status" id="statusText">Ready to send request to /api/titanic/predict</div>
 </div>
 
 <script>
-  const DATA_URL = '/_notebooks/big-idea-2/data/data.csv';
+  const PREDICT_URL = '/api/titanic/predict';
 
-  const searchInput = document.getElementById('searchInput');
-  const columnSelect = document.getElementById('columnSelect');
-  const tableHead = document.getElementById('tableHead');
-  const tableBody = document.getElementById('tableBody');
+  const passengerForm = document.getElementById('passengerForm');
+  const fillSampleBtn = document.getElementById('fillSampleBtn');
   const statusText = document.getElementById('statusText');
-  const inputGrid = document.getElementById('inputGrid');
-  const rowForm = document.getElementById('rowForm');
-  const clearFormBtn = document.getElementById('clearFormBtn');
-  const rowsStat = document.getElementById('rowsStat');
-  const columnsStat = document.getElementById('columnsStat');
-  const avgDurationStat = document.getElementById('avgDurationStat');
-  const avgCaloriesStat = document.getElementById('avgCaloriesStat');
+  const dieValue = document.getElementById('dieValue');
+  const surviveValue = document.getElementById('surviveValue');
+  const requestPreview = document.getElementById('requestPreview');
 
-  let columns = [];
-  let rows = [];
-  let sortState = { column: null, direction: 1 };
-
-  function parseCsv(text) {
-    const lines = text.trim().split(/\r?\n/).filter(Boolean);
-    const parsedColumns = lines[0].split(',').map((value) => value.trim());
-    const parsedRows = lines.slice(1).map((line) => {
-      const values = line.split(',');
-      const row = {};
-      parsedColumns.forEach((column, index) => {
-        row[column] = (values[index] ?? '').trim();
-      });
-      return row;
-    });
-    return { parsedColumns, parsedRows };
+  function buildPassengerPayload() {
+    const formData = new FormData(passengerForm);
+    return {
+      name: [String(formData.get('name') || '').trim()],
+      pclass: [Number(formData.get('pclass'))],
+      sex: [String(formData.get('sex'))],
+      age: [Number(formData.get('age'))],
+      sibsp: [Number(formData.get('sibsp'))],
+      parch: [Number(formData.get('parch'))],
+      fare: [Number(formData.get('fare'))],
+      embarked: [String(formData.get('embarked'))],
+      alone: [String(formData.get('alone')) === 'true']
+    };
   }
 
-  function numberOrNull(value) {
-    if (value === undefined || value === null || value === '') return null;
-    const num = Number(value);
-    return Number.isFinite(num) ? num : null;
+  function formatPercent(probability) {
+    if (typeof probability !== 'number' || Number.isNaN(probability)) return '-';
+    return `${(probability * 100).toFixed(2)}%`;
   }
 
-  function calculateAverage(list, field) {
-    const values = list.map((row) => numberOrNull(row[field])).filter((num) => num !== null);
-    if (values.length === 0) return '-';
-    const total = values.reduce((sum, num) => sum + num, 0);
-    return (total / values.length).toFixed(1);
-  }
-
-  function updateStats(filteredRows) {
-    rowsStat.textContent = filteredRows.length;
-    columnsStat.textContent = columns.length;
-    avgDurationStat.textContent = calculateAverage(filteredRows, 'Duration');
-    avgCaloriesStat.textContent = calculateAverage(filteredRows, 'Calories');
-  }
-
-  function renderHeader() {
-    tableHead.innerHTML = '';
-    columns.forEach((column) => {
-      const th = document.createElement('th');
-      const isSorted = sortState.column === column;
-      const arrow = isSorted ? (sortState.direction === 1 ? ' ▲' : ' ▼') : '';
-      th.textContent = `${column}${arrow}`;
-      th.addEventListener('click', () => {
-        if (sortState.column === column) {
-          sortState.direction *= -1;
-        } else {
-          sortState.column = column;
-          sortState.direction = 1;
-        }
-        render();
-      });
-      tableHead.appendChild(th);
-    });
-  }
-
-  function matchesQuery(row, query, targetColumn) {
-    if (!query) return true;
-    if (targetColumn === 'all') {
-      return columns.some((column) => String(row[column] || '').toLowerCase().includes(query));
-    }
-    return String(row[targetColumn] || '').toLowerCase().includes(query);
-  }
-
-  function getRenderedRows() {
-    const query = searchInput.value.trim().toLowerCase();
-    const targetColumn = columnSelect.value;
-    let filteredRows = rows.filter((row) => matchesQuery(row, query, targetColumn));
-
-    if (sortState.column) {
-      const key = sortState.column;
-      const direction = sortState.direction;
-      filteredRows = [...filteredRows].sort((a, b) => {
-        const aNum = numberOrNull(a[key]);
-        const bNum = numberOrNull(b[key]);
-
-        if (aNum !== null && bNum !== null) {
-          return (aNum - bNum) * direction;
-        }
-
-        return String(a[key]).localeCompare(String(b[key])) * direction;
-      });
-    }
-
-    return filteredRows;
-  }
-
-  function renderBody(filteredRows) {
-    tableBody.innerHTML = '';
-    filteredRows.forEach((row) => {
-      const tr = document.createElement('tr');
-      columns.forEach((column) => {
-        const td = document.createElement('td');
-        td.textContent = row[column];
-        tr.appendChild(td);
-      });
-      tableBody.appendChild(tr);
-    });
-  }
-
-  function render() {
-    const filteredRows = getRenderedRows();
-    renderHeader();
-    renderBody(filteredRows);
-    updateStats(filteredRows);
-    statusText.textContent = `Showing ${filteredRows.length} of ${rows.length} rows.`;
-  }
-
-  function populateColumnSelect() {
-    columns.forEach((column) => {
-      const option = document.createElement('option');
-      option.value = column;
-      option.textContent = column;
-      columnSelect.appendChild(option);
-    });
-  }
-
-  function renderInputForm() {
-    inputGrid.innerHTML = '';
-    columns.forEach((column) => {
-      const input = document.createElement('input');
-      input.type = 'text';
-      input.name = column;
-      input.placeholder = column;
-      input.setAttribute('aria-label', column);
-      inputGrid.appendChild(input);
-    });
-  }
-
-  function clearInputForm() {
-    rowForm.reset();
-  }
-
-  function addRowFromForm(event) {
+  async function predictSurvival(event) {
     event.preventDefault();
-    const formData = new FormData(rowForm);
-    const newRow = {};
 
-    columns.forEach((column) => {
-      newRow[column] = (formData.get(column) || '').toString().trim();
-    });
+    const passengerPayload = buildPassengerPayload();
+    requestPreview.textContent = JSON.stringify(passengerPayload, null, 2);
+    statusText.textContent = 'Sending request...';
 
-    rows.unshift(newRow);
-    render();
-    statusText.textContent = `Added 1 new row. Total rows: ${rows.length}.`;
-    clearInputForm();
-  }
-
-  async function loadData() {
     try {
-      const response = await fetch(DATA_URL);
-      if (!response.ok) throw new Error(`HTTP ${response.status}`);
-      const csvText = await response.text();
+      const response = await fetch(PREDICT_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(passengerPayload)
+      });
 
-      const { parsedColumns, parsedRows } = parseCsv(csvText);
-      columns = parsedColumns;
-      rows = parsedRows;
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
 
-      populateColumnSelect();
-      renderInputForm();
-      render();
-      statusText.textContent = `Loaded ${rows.length} rows from ${DATA_URL}.`;
+      const result = await response.json();
+      dieValue.textContent = formatPercent(result.die);
+      surviveValue.textContent = formatPercent(result.survive);
+      statusText.textContent = 'Prediction complete.';
     } catch (error) {
-      statusText.textContent = `Failed to load data: ${error.message}`;
+      dieValue.textContent = '-';
+      surviveValue.textContent = '-';
+      statusText.textContent = `Could not reach ${PREDICT_URL}: ${error.message}`;
     }
   }
 
-  searchInput.addEventListener('input', render);
-  columnSelect.addEventListener('change', render);
-  rowForm.addEventListener('submit', addRowFromForm);
-  clearFormBtn.addEventListener('click', clearInputForm);
+  function fillNotebookSample() {
+    passengerForm.elements.name.value = 'John Mortensen';
+    passengerForm.elements.pclass.value = '2';
+    passengerForm.elements.sex.value = 'male';
+    passengerForm.elements.age.value = '66';
+    passengerForm.elements.sibsp.value = '1';
+    passengerForm.elements.parch.value = '1';
+    passengerForm.elements.fare.value = '16.00';
+    passengerForm.elements.embarked.value = 'S';
+    passengerForm.elements.alone.value = 'false';
+  }
 
-  loadData();
+  passengerForm.addEventListener('submit', predictSurvival);
+  fillSampleBtn.addEventListener('click', fillNotebookSample);
+
+  fillNotebookSample();
+  requestPreview.textContent = JSON.stringify(buildPassengerPayload(), null, 2);
 </script>

@@ -10,11 +10,14 @@ permalink: /data-frontend
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Titanic Survival Frontend</title>
 <style>
+  /* hide the layout's dark mode toggle */
+  #theme-toggle { display: none !important; }
+
   body {
     margin: 0;
     font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
-    background: #f7f8fb;
-    color: #1f2937;
+    background: radial-gradient(circle at top, #14213d 0%, #0b0f19 45%);
+    color: #e6edf8;
     min-height: 100vh;
   }
 
@@ -31,18 +34,17 @@ permalink: /data-frontend
   }
 
   .subtitle {
-    color: #4b5563;
+    color: #99a8c6;
     margin-top: 8px;
     margin-bottom: 16px;
   }
 
   .panel {
-    background: #ffffff;
-    border: 1px solid #dbe2ea;
+    background: linear-gradient(180deg, #121a2a 0%, #172238 100%);
+    border: 1px solid #23304a;
     border-radius: 10px;
     padding: 16px;
     margin-bottom: 14px;
-    box-shadow: 0 1px 2px rgba(15, 23, 42, 0.05);
   }
 
   .input-title,
@@ -51,7 +53,7 @@ permalink: /data-frontend
     margin: 0 0 10px;
     font-size: 1rem;
     font-weight: 600;
-    color: #111827;
+    color: #cfe0ff;
   }
 
   .input-grid {
@@ -68,7 +70,7 @@ permalink: /data-frontend
   }
 
   .field label {
-    color: #374151;
+    color: #99a8c6;
     font-size: 0.86rem;
   }
 
@@ -84,9 +86,9 @@ permalink: /data-frontend
   }
 
   .btn {
-    background: #ffffff;
-    color: #111827;
-    border: 1px solid #cfd8e3;
+    background: #0e1625;
+    color: #e6edf8;
+    border: 1px solid #23304a;
     border-radius: 8px;
     padding: 8px 12px;
     cursor: pointer;
@@ -94,36 +96,36 @@ permalink: /data-frontend
   }
 
   .btn:hover {
-    border-color: #94a3b8;
+    border-color: #5aa6ff;
   }
 
   input,
   select,
   textarea,
   pre {
-    background: #f8fafc;
-    border: 1px solid #dbe2ea;
+    background: #0e1625;
+    border: 1px solid #23304a;
     border-radius: 8px;
-    color: #1f2937;
+    color: #e6edf8;
     padding: 9px 10px;
     font-size: 0.95rem;
   }
 
   .btn-primary {
-    background: #2563eb;
-    color: #ffffff;
-    border-color: #2563eb;
+    background: #5aa6ff;
+    color: #081323;
+    border-color: #5aa6ff;
   }
 
   .btn-primary:hover {
-    background: #1d4ed8;
-    border-color: #1d4ed8;
+    background: #3d8fe0;
+    border-color: #3d8fe0;
   }
 
   ul {
     margin: 0;
     padding-left: 18px;
-    color: #4b5563;
+    color: #99a8c6;
   }
 
   li {
@@ -132,7 +134,7 @@ permalink: /data-frontend
 
   .status {
     margin-top: 10px;
-    color: #4b5563;
+    color: #99a8c6;
     font-size: 0.9rem;
   }
 
@@ -143,14 +145,14 @@ permalink: /data-frontend
   }
 
   .result-card {
-    background: #f8fafc;
-    border: 1px solid #dbe2ea;
+    background: #0e1625;
+    border: 1px solid #23304a;
     border-radius: 10px;
     padding: 12px;
   }
 
   .result-label {
-    color: #4b5563;
+    color: #99a8c6;
     font-size: 0.8rem;
     margin-bottom: 3px;
   }
@@ -158,7 +160,7 @@ permalink: /data-frontend
   .result-value {
     font-size: 1.4rem;
     font-weight: 700;
-    color: #0f172a;
+    color: #d9e9ff;
   }
 
   pre {

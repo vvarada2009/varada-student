@@ -1,5 +1,7 @@
 ---
-title: SRP 
+layout: post
+title: "Applying SRP to My Code"
+date: 2026-03-25
 permalink: /srp/
 ---
 

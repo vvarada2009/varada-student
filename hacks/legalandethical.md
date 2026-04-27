@@ -7,40 +7,111 @@ permalink: /student/ip-ethics-review/
 
 # IP & Ethics Review
 
-## **Intellectual Property (IP)**
-- A work or invention that is the result of creativity to which one has rights
-- Can be saved on the computer, making it faster and easier to access and distribute
-- Raises concerns about ownership and whether someone is allowed to use someone else's creations
+<style>
+  .lesson-shell {
+    max-width: 900px;
+    margin: 1.2rem auto 0;
+    padding: 1rem;
+    border-radius: 16px;
+    background: linear-gradient(180deg, #f5f9ff 0%, #ffffff 100%);
+    box-shadow: 0 16px 35px rgba(15, 23, 42, 0.08);
+    border: 1px solid #d9e2ec;
+  }
 
-## **Copyright**
-- Protects IP and prevents anyone from using it unless they have permission
+  .lesson-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 0.9rem;
+  }
 
-## **Legal Ways to Use Materials Created by Someone Else**
-- **Creative Commons**
-  - Provides free licenses that allow creators to specify how others may use their creation
-  - Clearly tells users what to do and not do with the IP
-  
-- **Open Source**
-  - Programs that are freely available for anyone to use
-  - Can be redistributed or modified by others
-  
-- **Open Access**
-  - Online research output free of any restrictions on access
-  - Free of restrictions on use such as copyright and license restrictions
+  .lesson-card {
+    background: #ffffff;
+    border: 1px solid #d9e2ec;
+    border-radius: 12px;
+    padding: 0.9rem;
+    box-shadow: 0 5px 14px rgba(15, 23, 42, 0.05);
+  }
 
-## **Plagiarism**
-- Using work that is not one's own and presenting it as one's own
+  .lesson-card h3 {
+    margin: 0 0 0.55rem;
+    color: #102a43;
+    font-size: 1.05rem;
+  }
 
-## **Legal Concerns**
-- Broad access to digital information has been made easier through technology
-- Open source programs may be created with good intentions (free, modifiable) but can be used to harm others
-- Software that allows downloads and access, plus devices that collect and analyze data, create concerns about monitoring individual activities
+  .lesson-card ul {
+    margin: 0;
+    padding-left: 1.1rem;
+    color: #243b53;
+  }
 
-## **Ethical Concerns**
-- Software including algorithms could have built-in bias
-- The **Digital Divide**: unequal distribution of access to technology
-  - Not everyone has equal access to or understanding of how to use the internet and technologies
-  - Access to free resources through Creative Commons, Open Source, and Open Access doesn't mean everyone can access them equally
+  .lesson-card li { margin-bottom: 0.4rem; }
+
+  .lesson-highlight {
+    margin-top: 1rem;
+    padding: 0.85rem;
+    border-radius: 12px;
+    background: #102a43;
+    color: #f0f4f8;
+  }
+
+  .lesson-highlight h3 {
+    margin: 0 0 0.45rem;
+    color: #f0f4f8;
+  }
+
+  .lesson-highlight ul {
+    margin: 0;
+    padding-left: 1.1rem;
+  }
+</style>
+
+<div class="lesson-shell">
+  <div class="lesson-grid">
+    <section class="lesson-card">
+      <h3>Intellectual Property (IP)</h3>
+      <ul>
+        <li>A work or invention that is the result of creativity to which one has rights.</li>
+        <li>Can be saved on the computer, making it faster and easier to access and distribute.</li>
+        <li>Raises concerns about ownership and whether someone is allowed to use someone else's creations.</li>
+      </ul>
+    </section>
+
+    <section class="lesson-card">
+      <h3>Copyright</h3>
+      <ul>
+        <li>Protects IP and prevents anyone from using it unless they have permission.</li>
+      </ul>
+    </section>
+
+    <section class="lesson-card">
+      <h3>Legal Ways to Use Materials Created by Someone Else</h3>
+      <ul>
+        <li><strong>Creative Commons</strong>: Provides free licenses that allow creators to specify how others may use their creation and clearly tells users what to do and not do with the IP.</li>
+        <li><strong>Open Source</strong>: Programs that are freely available for anyone to use and can be redistributed or modified by others.</li>
+        <li><strong>Open Access</strong>: Online research output free of restrictions on access and many restrictions on use.</li>
+      </ul>
+    </section>
+
+    <section class="lesson-card">
+      <h3>Plagiarism</h3>
+      <ul>
+        <li>Using work that is not one's own and presenting it as one's own.</li>
+      </ul>
+    </section>
+  </div>
+
+  <section class="lesson-highlight">
+    <h3>Legal and Ethical Concerns</h3>
+    <ul>
+      <li>Broad access to digital information has been made easier through technology.</li>
+      <li>Open source programs may be created with good intentions (free, modifiable) but can be used to harm others.</li>
+      <li>Software that allows downloads and access, plus devices that collect and analyze data, create concerns about monitoring individual activities.</li>
+      <li>Software including algorithms could have built-in bias.</li>
+      <li><strong>Digital Divide</strong>: unequal distribution of access to technology.
+      Not everyone has equal access to or understanding of how to use the internet and technologies, and access to free resources does not mean equal access for everyone.</li>
+    </ul>
+  </section>
+</div>
 
 ---
 

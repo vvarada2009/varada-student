@@ -56,17 +56,9 @@ permalink: /student/ip-ethics-review/
 
   .concerns-bottom {
     margin-top: 0.9rem;
-    background: #000000;
-    color: #ffffff;
-    border: 1px solid #000000;
-  }
-
-  .concerns-bottom h3 {
-    color: #ffffff;
-  }
-
-  .concerns-bottom ul {
-    color: #ffffff;
+    background: #ffffff;
+    color: #243b53;
+    border: 1px solid #d9e2ec;
   }
 
   @media (max-width: 640px) {

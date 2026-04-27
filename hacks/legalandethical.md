@@ -8,66 +8,72 @@ permalink: /student/ip-ethics-review/
 # IP & Ethics Review
 
 <style>
-  .lesson-shell {
-    max-width: 900px;
-    margin: 1.2rem auto 0;
-    padding: 1rem;
-    border-radius: 16px;
-    background: linear-gradient(180deg, #f5f9ff 0%, #ffffff 100%);
-    box-shadow: 0 16px 35px rgba(15, 23, 42, 0.08);
+  .ip-wrap {
+    max-width: 920px;
+    margin: 1rem auto 0;
+    padding: 0.25rem;
+  }
+
+  .ip-intro {
     border: 1px solid #d9e2ec;
-  }
-
-  .lesson-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 0.9rem;
-  }
-
-  .lesson-card {
-    background: #ffffff;
-    border: 1px solid #d9e2ec;
-    border-radius: 12px;
-    padding: 0.9rem;
-    box-shadow: 0 5px 14px rgba(15, 23, 42, 0.05);
-  }
-
-  .lesson-card h3 {
-    margin: 0 0 0.55rem;
-    color: #102a43;
-    font-size: 1.05rem;
-  }
-
-  .lesson-card ul {
-    margin: 0;
-    padding-left: 1.1rem;
+    border-left: 5px solid #2f6f9f;
+    border-radius: 10px;
+    background: #f8fbff;
+    padding: 0.8rem 1rem;
+    margin-bottom: 0.9rem;
     color: #243b53;
   }
 
-  .lesson-card li { margin-bottom: 0.4rem; }
-
-  .lesson-highlight {
-    margin-top: 1rem;
-    padding: 0.85rem;
-    border-radius: 12px;
-    background: #102a43;
-    color: #f0f4f8;
+  .ip-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 0.85rem;
   }
 
-  .lesson-highlight h3 {
-    margin: 0 0 0.45rem;
-    color: #f0f4f8;
+  .ip-panel {
+    background: #ffffff;
+    border: 1px solid #d9e2ec;
+    border-radius: 10px;
+    padding: 0.95rem;
   }
 
-  .lesson-highlight ul {
+  .ip-panel h3 {
+    margin: 0 0 0.5rem;
+    color: #102a43;
+    font-size: 1.03rem;
+    line-height: 1.3;
+  }
+
+  .ip-panel ul {
     margin: 0;
-    padding-left: 1.1rem;
+    padding-left: 1.15rem;
+    color: #243b53;
+  }
+
+  .ip-panel li {
+    margin-bottom: 0.4rem;
+  }
+
+  .ip-panel.concerning {
+    grid-column: 1 / -1;
+    background: #fffdf7;
+    border-color: #f0d9a8;
+  }
+
+  @media (max-width: 640px) {
+    .ip-panel {
+      padding: 0.8rem;
+    }
   }
 </style>
 
-<div class="lesson-shell">
-  <div class="lesson-grid">
-    <section class="lesson-card">
+<div class="ip-wrap">
+  <div class="ip-intro">
+    Quick review of legal and ethical computing ideas for AP CSP.
+  </div>
+
+  <div class="ip-grid">
+    <section class="ip-panel">
       <h3>Intellectual Property (IP)</h3>
       <ul>
         <li>A work or invention that is the result of creativity to which one has rights.</li>
@@ -76,14 +82,14 @@ permalink: /student/ip-ethics-review/
       </ul>
     </section>
 
-    <section class="lesson-card">
+    <section class="ip-panel">
       <h3>Copyright</h3>
       <ul>
         <li>Protects IP and prevents anyone from using it unless they have permission.</li>
       </ul>
     </section>
 
-    <section class="lesson-card">
+    <section class="ip-panel">
       <h3>Legal Ways to Use Materials Created by Someone Else</h3>
       <ul>
         <li><strong>Creative Commons</strong>: Provides free licenses that allow creators to specify how others may use their creation and clearly tells users what to do and not do with the IP.</li>
@@ -92,25 +98,24 @@ permalink: /student/ip-ethics-review/
       </ul>
     </section>
 
-    <section class="lesson-card">
+    <section class="ip-panel">
       <h3>Plagiarism</h3>
       <ul>
         <li>Using work that is not one's own and presenting it as one's own.</li>
       </ul>
     </section>
-  </div>
 
-  <section class="lesson-highlight">
-    <h3>Legal and Ethical Concerns</h3>
-    <ul>
-      <li>Broad access to digital information has been made easier through technology.</li>
-      <li>Open source programs may be created with good intentions (free, modifiable) but can be used to harm others.</li>
-      <li>Software that allows downloads and access, plus devices that collect and analyze data, create concerns about monitoring individual activities.</li>
-      <li>Software including algorithms could have built-in bias.</li>
-      <li><strong>Digital Divide</strong>: unequal distribution of access to technology.
-      Not everyone has equal access to or understanding of how to use the internet and technologies, and access to free resources does not mean equal access for everyone.</li>
-    </ul>
-  </section>
+    <section class="ip-panel concerning">
+      <h3>Legal and Ethical Concerns</h3>
+      <ul>
+        <li>Broad access to digital information has been made easier through technology.</li>
+        <li>Open source programs may be created with good intentions (free, modifiable) but can be used to harm others.</li>
+        <li>Software that allows downloads and access, plus devices that collect and analyze data, create concerns about monitoring individual activities.</li>
+        <li>Software including algorithms could have built-in bias.</li>
+        <li><strong>Digital Divide</strong>: unequal distribution of access to technology. Not everyone has equal access to or understanding of how to use the internet and technologies, and access to free resources does not mean equal access for everyone.</li>
+      </ul>
+    </section>
+  </div>
 </div>
 
 ---

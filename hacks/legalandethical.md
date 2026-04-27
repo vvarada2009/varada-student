@@ -8,26 +8,6 @@ permalink: /student/ip-ethics-review/
 # IP & Ethics Review
 
 <style>
-  body,
-  main,
-  .page-content,
-  .post-content,
-  .content,
-  .wrapper {
-    background: #000000 !important;
-    color: #ffffff !important;
-  }
-
-  h1,
-  h2,
-  h3,
-  p,
-  li,
-  span,
-  strong {
-    color: #ffffff !important;
-  }
-
   .ip-wrap {
     max-width: 920px;
     margin: 1rem auto 0;
@@ -51,8 +31,8 @@ permalink: /student/ip-ethics-review/
   }
 
   .ip-panel {
-    background: #111111;
-    border: 1px solid #3a3a3a;
+    background: #ffffff;
+    border: 1px solid #d9e2ec;
     border-radius: 10px;
     padding: 0.95rem;
   }
@@ -67,7 +47,7 @@ permalink: /student/ip-ethics-review/
   .ip-panel ul {
     margin: 0;
     padding-left: 1.15rem;
-    color: #ffffff;
+    color: #243b53;
   }
 
   .ip-panel li {
@@ -76,26 +56,9 @@ permalink: /student/ip-ethics-review/
 
   .concerns-bottom {
     margin-top: 0.9rem;
-    background: #111111;
-    color: #ffffff;
-    border: 1px solid #3a3a3a;
-  }
-
-  #ip-ethics-quiz {
-    background: #111111 !important;
-    border: 1px solid #3a3a3a !important;
-    box-shadow: none !important;
-  }
-
-  #quiz-next {
-    background: #ffffff !important;
-    color: #000000 !important;
-  }
-
-  #quiz-options button {
-    background: #1a1a1a;
-    color: #ffffff;
-    border: 1px solid #4a4a4a;
+    background: #ffffff;
+    color: #243b53;
+    border: 1px solid #d9e2ec;
   }
 
   @media (max-width: 640px) {
@@ -161,13 +124,13 @@ permalink: /student/ip-ethics-review/
 
 ## Quick Check: 5-Question MC Progression
 
-<div id="ip-ethics-quiz" style="max-width: 760px; margin: 1.5rem auto; border: 1px solid #3a3a3a; border-radius: 14px; padding: 1rem; background: #111111; box-shadow: none;">
+<div id="ip-ethics-quiz" style="max-width: 760px; margin: 1.5rem auto; border: 1px solid #d9e2ec; border-radius: 14px; padding: 1rem; background: #f8fbff; box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);">
   <div style="display:flex; justify-content:space-between; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
     <h3 style="margin:0; color:#102a43;">IP & Ethics Checkpoint</h3>
     <span id="quiz-step" style="font-size:0.92rem; color:#486581;">Question 1 of 5</span>
   </div>
 
-  <div style="height:10px; background:#2a2a2a; border-radius:999px; overflow:hidden; margin-bottom:1rem;">
+  <div style="height:10px; background:#d9e2ec; border-radius:999px; overflow:hidden; margin-bottom:1rem;">
     <div id="quiz-progress" style="height:100%; width:20%; background:linear-gradient(90deg, #2f855a, #38a169); transition:width 0.25s ease;"></div>
   </div>
 
@@ -271,10 +234,9 @@ permalink: /student/ip-ethics-review/
         btn.textContent = choice;
         btn.style.textAlign = "left";
         btn.style.padding = "0.65rem 0.75rem";
-        btn.style.border = "1px solid #4a4a4a";
+        btn.style.border = "1px solid #bcccdc";
         btn.style.borderRadius = "8px";
-        btn.style.background = "#1a1a1a";
-        btn.style.color = "#ffffff";
+        btn.style.background = "white";
         btn.style.cursor = "pointer";
 
         btn.addEventListener("click", () => {

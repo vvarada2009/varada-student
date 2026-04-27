@@ -26,7 +26,7 @@ permalink: /student/ip-ethics-review/
 
   .ip-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 0.85rem;
   }
 
@@ -54,13 +54,11 @@ permalink: /student/ip-ethics-review/
     margin-bottom: 0.4rem;
   }
 
-  .ip-panel.concerning {
-    grid-column: 1 / -1;
-    background: #fffdf7;
-    border-color: #f0d9a8;
-  }
-
   @media (max-width: 640px) {
+    .ip-grid {
+      grid-template-columns: 1fr;
+    }
+
     .ip-panel {
       padding: 0.8rem;
     }
@@ -68,10 +66,6 @@ permalink: /student/ip-ethics-review/
 </style>
 
 <div class="ip-wrap">
-  <div class="ip-intro">
-    Quick review of legal and ethical computing ideas for AP CSP.
-  </div>
-
   <div class="ip-grid">
     <section class="ip-panel">
       <h3>Intellectual Property (IP)</h3>
@@ -105,7 +99,7 @@ permalink: /student/ip-ethics-review/
       </ul>
     </section>
 
-    <section class="ip-panel concerning">
+    <section class="ip-panel">
       <h3>Legal and Ethical Concerns</h3>
       <ul>
         <li>Broad access to digital information has been made easier through technology.</li>

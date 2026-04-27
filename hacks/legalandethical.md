@@ -54,6 +54,21 @@ permalink: /student/ip-ethics-review/
     margin-bottom: 0.4rem;
   }
 
+  .concerns-bottom {
+    margin-top: 0.9rem;
+    background: #000000;
+    color: #ffffff;
+    border: 1px solid #000000;
+  }
+
+  .concerns-bottom h3 {
+    color: #ffffff;
+  }
+
+  .concerns-bottom ul {
+    color: #ffffff;
+  }
+
   @media (max-width: 640px) {
     .ip-grid {
       grid-template-columns: 1fr;
@@ -99,17 +114,18 @@ permalink: /student/ip-ethics-review/
       </ul>
     </section>
 
-    <section class="ip-panel">
-      <h3>Legal and Ethical Concerns</h3>
-      <ul>
-        <li>Broad access to digital information has been made easier through technology.</li>
-        <li>Open source programs may be created with good intentions (free, modifiable) but can be used to harm others.</li>
-        <li>Software that allows downloads and access, plus devices that collect and analyze data, create concerns about monitoring individual activities.</li>
-        <li>Software including algorithms could have built-in bias.</li>
-        <li><strong>Digital Divide</strong>: unequal distribution of access to technology. Not everyone has equal access to or understanding of how to use the internet and technologies, and access to free resources does not mean equal access for everyone.</li>
-      </ul>
-    </section>
   </div>
+
+  <section class="ip-panel concerns-bottom">
+    <h3>Legal and Ethical Concerns</h3>
+    <ul>
+      <li>Broad access to digital information has been made easier through technology.</li>
+      <li>Open source programs may be created with good intentions (free, modifiable) but can be used to harm others.</li>
+      <li>Software that allows downloads and access, plus devices that collect and analyze data, create concerns about monitoring individual activities.</li>
+      <li>Software including algorithms could have built-in bias.</li>
+      <li><strong>Digital Divide</strong>: unequal distribution of access to technology. Not everyone has equal access to or understanding of how to use the internet and technologies, and access to free resources does not mean equal access for everyone.</li>
+    </ul>
+  </section>
 </div>
 
 ---

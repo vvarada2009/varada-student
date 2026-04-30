@@ -59,11 +59,12 @@ permalink: /student/ip-ethics-review/
     margin: 0;
     font-size: clamp(1.35rem, 2.8vw, 2rem);
     line-height: 1.2;
+    color: #000000 !important;
   }
 
   .ip-hero p {
     margin: 0.65rem 0 0;
-    color: var(--ip-muted);
+    color: #2d2222 !important;
     max-width: 68ch;
     line-height: 1.5;
   }
@@ -86,7 +87,7 @@ permalink: /student/ip-ethics-review/
     margin: 0 0 0.6rem;
     font-size: 1.04rem;
     line-height: 1.3;
-    color: #31240b;
+    color: #31240b !important;
   }
 
   .ip-panel ul {
@@ -235,7 +236,7 @@ permalink: /student/ip-ethics-review/
     border: 1px dashed #cab293;
     background: #fffaf2;
     line-height: 1.42;
-    color: #2c3a41;
+    color: #2c3a41 !important;
     font-weight: 600;
     min-height: 64px;
   }
@@ -265,10 +266,7 @@ permalink: /student/ip-ethics-review/
 <div class="ip-wrap">
   <section class="ip-hero">
     <span class="ip-kicker">AP CSP Review Zone</span>
-    <h2>Legal and Ethical Computing, But Make It Interactive</h2>
-    <p>
-      Use this page to review the core terms, then test yourself with two activities: a multiple-choice checkpoint and a timed scenario sprint game.
-    </p>
+    <h2>Legal and Ethical Computing</h2>
   </section>
 
   <div class="ip-grid">

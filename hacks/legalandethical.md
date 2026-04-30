@@ -1,5 +1,5 @@
 ---
-layout: opencs
+layout: base 
 title: IP & Ethics Review
 description: AP CSP legal and ethical computing review
 permalink: /student/ip-ethics-review/
@@ -8,71 +8,269 @@ permalink: /student/ip-ethics-review/
 # IP & Ethics Review
 
 <style>
-  .ip-wrap {
-    max-width: 920px;
-    margin: 1rem auto 0;
-    padding: 0.25rem;
+  :root {
+    --ip-bg: #f4efe4;
+    --ip-paper: #fffdf8;
+    --ip-ink: #1d2428;
+    --ip-muted: #505d66;
+    --ip-accent: #b84f3a;
+    --ip-accent-2: #2f6b62;
+    --ip-line: #d7cab6;
+    --ip-good: #1f8a56;
+    --ip-bad: #b83d3d;
   }
 
-  .ip-intro {
-    border: 1px solid #d9e2ec;
-    border-left: 5px solid #2f6f9f;
-    border-radius: 10px;
-    background: #f8fbff;
-    padding: 0.8rem 1rem;
-    margin-bottom: 0.9rem;
-    color: #243b53;
+  .ip-wrap {
+    max-width: 1020px;
+    margin: 1.2rem auto 0;
+    padding: 0.75rem;
+    color: var(--ip-ink);
+  }
+
+  .ip-hero {
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--ip-line);
+    border-radius: 20px;
+    padding: 1.2rem;
+    background:
+      radial-gradient(circle at 10% 0%, #f5dcc4 0%, transparent 35%),
+      radial-gradient(circle at 85% 100%, #d8eee7 0%, transparent 42%),
+      linear-gradient(140deg, #fffcf6, #f6efe2 70%);
+    box-shadow: 0 18px 38px rgba(36, 29, 10, 0.1);
+    margin-bottom: 1rem;
+  }
+
+  .ip-kicker {
+    display: inline-block;
+    margin: 0 0 0.55rem;
+    padding: 0.28rem 0.7rem;
+    border-radius: 999px;
+    border: 1px solid #d8baa9;
+    color: #7d3121;
+    font-size: 0.76rem;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    font-weight: 700;
+    background: #fff5ee;
+  }
+
+  .ip-hero h2 {
+    margin: 0;
+    font-size: clamp(1.35rem, 2.8vw, 2rem);
+    line-height: 1.2;
+  }
+
+  .ip-hero p {
+    margin: 0.65rem 0 0;
+    color: var(--ip-muted);
+    max-width: 68ch;
+    line-height: 1.5;
   }
 
   .ip-grid {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.85rem;
+    gap: 0.9rem;
   }
 
   .ip-panel {
-    background: #ffffff;
-    border: 1px solid #d9e2ec;
-    border-radius: 10px;
-    padding: 0.95rem;
+    background: var(--ip-paper);
+    border: 1px solid var(--ip-line);
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: 0 8px 20px rgba(22, 22, 17, 0.04);
   }
 
   .ip-panel h3 {
-    margin: 0 0 0.5rem;
-    color: #102a43;
-    font-size: 1.03rem;
+    margin: 0 0 0.6rem;
+    font-size: 1.04rem;
     line-height: 1.3;
+    color: #31240b;
   }
 
   .ip-panel ul {
     margin: 0;
-    padding-left: 1.15rem;
-    color: #243b53;
+    padding-left: 1.1rem;
+    color: #36434c;
   }
 
   .ip-panel li {
-    margin-bottom: 0.4rem;
+    margin-bottom: 0.42rem;
+    line-height: 1.45;
   }
 
   .concerns-bottom {
     margin-top: 0.9rem;
-    background: #ffffff;
-    color: #243b53;
-    border: 1px solid #d9e2ec;
+    background: #f9f5ea;
   }
 
-  @media (max-width: 640px) {
+  .ip-divider {
+    margin: 1.5rem 0 1rem;
+    border: 0;
+    height: 1px;
+    background: linear-gradient(90deg, transparent, #c8b79f, transparent);
+  }
+
+  .interactive-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.9rem;
+  }
+
+  .interactive-card {
+    background: #fff;
+    border: 1px solid var(--ip-line);
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: 0 10px 24px rgba(38, 22, 14, 0.06);
+  }
+
+  .interactive-card h3 {
+    margin: 0 0 0.55rem;
+    color: #342713;
+  }
+
+  .status-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.7rem;
+    color: #4e5e67;
+    font-size: 0.92rem;
+  }
+
+  .bar {
+    height: 10px;
+    background: #e8dfd0;
+    border-radius: 999px;
+    overflow: hidden;
+    margin-bottom: 0.85rem;
+  }
+
+  .bar > div {
+    height: 100%;
+    transition: width 0.28s ease;
+    border-radius: 999px;
+  }
+
+  #quiz-progress {
+    background: linear-gradient(90deg, #b84f3a, #d67546);
+  }
+
+  #sprint-timer-bar {
+    background: linear-gradient(90deg, #2f6b62, #4a9185);
+  }
+
+  .options-grid {
+    display: grid;
+    gap: 0.55rem;
+  }
+
+  .choice-btn,
+  .action-btn,
+  .tag-btn {
+    border-radius: 10px;
+    border: 1px solid #cfbfaa;
+    background: #fffdf9;
+    color: #2f3d45;
+    padding: 0.64rem 0.74rem;
+    cursor: pointer;
+    transition: transform 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+    font: inherit;
+  }
+
+  .choice-btn {
+    text-align: left;
+  }
+
+  .choice-btn:hover,
+  .action-btn:hover,
+  .tag-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 16px rgba(29, 25, 15, 0.09);
+    background: #fffbf3;
+  }
+
+  .tag-row {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0.5rem;
+    margin-top: 0.7rem;
+  }
+
+  .feedback {
+    margin: 0.8rem 0 0;
+    min-height: 1.25rem;
+    color: #40525d;
+  }
+
+  .result {
+    display: none;
+    margin-top: 0.9rem;
+    border-radius: 10px;
+    padding: 0.8rem;
+    font-weight: 600;
+  }
+
+  .result.good {
+    display: block;
+    background: #e6f7ee;
+    color: #18633f;
+    border: 1px solid #b7e2cb;
+  }
+
+  .result.warn {
+    display: block;
+    background: #fff0f0;
+    color: #873333;
+    border: 1px solid #efcaca;
+  }
+
+  .sprint-statement {
+    margin: 0;
+    padding: 0.8rem;
+    border-radius: 10px;
+    border: 1px dashed #cab293;
+    background: #fffaf2;
+    line-height: 1.42;
+    color: #2c3a41;
+    font-weight: 600;
+    min-height: 64px;
+  }
+
+  .sprint-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 0.8rem;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+  }
+
+  .subtle {
+    color: #5f6e78;
+    font-size: 0.9rem;
+  }
+
+  @media (max-width: 840px) {
+    .interactive-grid,
     .ip-grid {
       grid-template-columns: 1fr;
-    }
-
-    .ip-panel {
-      padding: 0.8rem;
     }
   }
 </style>
 
 <div class="ip-wrap">
+  <section class="ip-hero">
+    <span class="ip-kicker">AP CSP Review Zone</span>
+    <h2>Legal and Ethical Computing, But Make It Interactive</h2>
+    <p>
+      Use this page to review the core terms, then test yourself with two activities: a multiple-choice checkpoint and a timed scenario sprint game.
+    </p>
+  </section>
+
   <div class="ip-grid">
     <section class="ip-panel">
       <h3>Intellectual Property (IP)</h3>
@@ -120,34 +318,64 @@ permalink: /student/ip-ethics-review/
   </section>
 </div>
 
----
+<hr class="ip-divider" />
 
-## Quick Check: 5-Question MC Progression
+<div class="interactive-grid">
+  <section id="ip-ethics-quiz" class="interactive-card">
+    <h3>Quick Check: 5-Question Progression</h3>
+    <div class="status-row">
+      <span id="quiz-step">Question 1 of 5</span>
+      <span class="subtle">Checkpoint mode</span>
+    </div>
 
-<div id="ip-ethics-quiz" style="max-width: 760px; margin: 1.5rem auto; border: 1px solid #d9e2ec; border-radius: 14px; padding: 1rem; background: #f8fbff; box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06);">
-  <div style="display:flex; justify-content:space-between; align-items:center; gap:0.75rem; margin-bottom:0.75rem;">
-    <h3 style="margin:0; color:#102a43;">IP & Ethics Checkpoint</h3>
-    <span id="quiz-step" style="font-size:0.92rem; color:#486581;">Question 1 of 5</span>
-  </div>
+    <div class="bar">
+      <div id="quiz-progress" style="width:20%;"></div>
+    </div>
 
-  <div style="height:10px; background:#d9e2ec; border-radius:999px; overflow:hidden; margin-bottom:1rem;">
-    <div id="quiz-progress" style="height:100%; width:20%; background:linear-gradient(90deg, #2f855a, #38a169); transition:width 0.25s ease;"></div>
-  </div>
+    <p id="quiz-question" class="sprint-statement"></p>
+    <div id="quiz-options" class="options-grid"></div>
 
-  <p id="quiz-question" style="font-weight:600; color:#243b53; margin-bottom:0.8rem;"></p>
-  <div id="quiz-options" style="display:grid; gap:0.6rem;"></div>
+    <p id="quiz-feedback" class="feedback"></p>
+    <div class="sprint-footer">
+      <span class="subtle">Answer to continue.</span>
+      <button id="quiz-next" type="button" class="action-btn" disabled>Next</button>
+    </div>
+    <div id="quiz-result" class="result"></div>
+  </section>
 
-  <div style="display:flex; justify-content:space-between; align-items:center; gap:0.75rem; margin-top:1rem;">
-    <p id="quiz-feedback" style="margin:0; color:#334e68; min-height:1.4rem;"></p>
-    <button id="quiz-next" type="button" style="border:none; background:#334e68; color:white; padding:0.55rem 0.9rem; border-radius:8px; cursor:pointer;" disabled>Next</button>
-  </div>
+  <section id="ethics-sprint" class="interactive-card">
+    <h3>Game: Ethics Sprint (60s)</h3>
+    <div class="status-row">
+      <span id="sprint-timer">Time: 60s</span>
+      <span id="sprint-score">Score: 0</span>
+    </div>
 
-  <div id="quiz-result" style="display:none; margin-top:1rem; padding:0.9rem; border-radius:10px; background:#e6fffa; color:#014d40; font-weight:600;"></div>
+    <div class="bar">
+      <div id="sprint-timer-bar" style="width:100%;"></div>
+    </div>
+
+    <p id="sprint-statement" class="sprint-statement">Press Start to begin the scenario sprint.</p>
+
+    <div class="tag-row" id="sprint-tags">
+      <button type="button" class="tag-btn" data-tag="Legal">Legal</button>
+      <button type="button" class="tag-btn" data-tag="Ethical">Ethical</button>
+      <button type="button" class="tag-btn" data-tag="Both">Both</button>
+      <button type="button" class="tag-btn" data-tag="Neither">Neither</button>
+    </div>
+
+    <p id="sprint-feedback" class="feedback"></p>
+
+    <div class="sprint-footer">
+      <button id="sprint-start" type="button" class="action-btn">Start Game</button>
+      <span id="sprint-best" class="subtle">Best: 0</span>
+    </div>
+    <div id="sprint-result" class="result"></div>
+  </section>
 </div>
 
 <script>
   (function () {
-    const questions = [
+    const quizQuestions = [
       {
         q: "What does copyright primarily do?",
         options: [
@@ -217,14 +445,15 @@ permalink: /student/ip-ethics-review/
     let answered = false;
 
     function renderQuestion() {
-      const item = questions[index];
+      const item = quizQuestions[index];
       answered = false;
       nextBtn.disabled = true;
       feedbackEl.textContent = "";
-      resultEl.style.display = "none";
+      resultEl.className = "result";
+      resultEl.textContent = "";
 
-      stepEl.textContent = `Question ${index + 1} of ${questions.length}`;
-      progressEl.style.width = `${((index + 1) / questions.length) * 100}%`;
+      stepEl.textContent = `Question ${index + 1} of ${quizQuestions.length}`;
+      progressEl.style.width = `${((index + 1) / quizQuestions.length) * 100}%`;
       questionEl.textContent = item.q;
 
       optionsEl.innerHTML = "";
@@ -232,12 +461,7 @@ permalink: /student/ip-ethics-review/
         const btn = document.createElement("button");
         btn.type = "button";
         btn.textContent = choice;
-        btn.style.textAlign = "left";
-        btn.style.padding = "0.65rem 0.75rem";
-        btn.style.border = "1px solid #bcccdc";
-        btn.style.borderRadius = "8px";
-        btn.style.background = "white";
-        btn.style.cursor = "pointer";
+        btn.className = "choice-btn";
 
         btn.addEventListener("click", () => {
           if (answered) return;
@@ -246,25 +470,25 @@ permalink: /student/ip-ethics-review/
           const isCorrect = i === item.answer;
           if (isCorrect) {
             score += 1;
-            btn.style.background = "#d3f9d8";
-            btn.style.borderColor = "#2f9e44";
+            btn.style.background = "#e2f6eb";
+            btn.style.borderColor = "#1f8a56";
             feedbackEl.textContent = "Correct.";
           } else {
-            btn.style.background = "#ffe3e3";
-            btn.style.borderColor = "#c92a2a";
+            btn.style.background = "#ffeded";
+            btn.style.borderColor = "#b83d3d";
             feedbackEl.textContent = `Not quite. Correct answer: ${item.options[item.answer]}`;
           }
 
           Array.from(optionsEl.children).forEach((child, childIndex) => {
             child.disabled = true;
             if (childIndex === item.answer) {
-              child.style.background = "#d3f9d8";
-              child.style.borderColor = "#2f9e44";
+              child.style.background = "#e2f6eb";
+              child.style.borderColor = "#1f8a56";
             }
           });
 
           nextBtn.disabled = false;
-          nextBtn.textContent = index === questions.length - 1 ? "Finish" : "Next";
+          nextBtn.textContent = index === quizQuestions.length - 1 ? "Finish" : "Next";
         });
 
         optionsEl.appendChild(btn);
@@ -272,7 +496,7 @@ permalink: /student/ip-ethics-review/
     }
 
     nextBtn.addEventListener("click", () => {
-      if (index < questions.length - 1) {
+      if (index < quizQuestions.length - 1) {
         index += 1;
         renderQuestion();
         return;
@@ -285,11 +509,160 @@ permalink: /student/ip-ethics-review/
       stepEl.textContent = "Done";
       progressEl.style.width = "100%";
 
-      const percent = Math.round((score / questions.length) * 100);
-      resultEl.style.display = "block";
-      resultEl.textContent = `You scored ${score}/${questions.length} (${percent}%).`;
+      const percent = Math.round((score / quizQuestions.length) * 100);
+      resultEl.className = percent >= 80 ? "result good" : "result warn";
+      resultEl.textContent = `You scored ${score}/${quizQuestions.length} (${percent}%).`;
     });
 
     renderQuestion();
+  })();
+</script>
+
+<script>
+  (function () {
+    const statements = [
+      {
+        text: "You use an image from the web in your project without permission or attribution.",
+        tag: "Legal"
+      },
+      {
+        text: "A recommendation algorithm consistently disadvantages one group because of biased training data.",
+        tag: "Ethical"
+      },
+      {
+        text: "You release your code under an open-source license and include the required license file.",
+        tag: "Both"
+      },
+      {
+        text: "A student writes notes in their own words after reading a textbook chapter.",
+        tag: "Neither"
+      },
+      {
+        text: "An app tracks location in the background without clearly informing users.",
+        tag: "Ethical"
+      },
+      {
+        text: "You copy text from a classmate's work and submit it as your own.",
+        tag: "Both"
+      },
+      {
+        text: "You remix a song labeled Creative Commons BY and credit the creator.",
+        tag: "Legal"
+      },
+      {
+        text: "A company provides free internet hotspots to reduce unequal access.",
+        tag: "Ethical"
+      }
+    ];
+
+    const timerEl = document.getElementById("sprint-timer");
+    const scoreEl = document.getElementById("sprint-score");
+    const statementEl = document.getElementById("sprint-statement");
+    const feedbackEl = document.getElementById("sprint-feedback");
+    const bestEl = document.getElementById("sprint-best");
+    const resultEl = document.getElementById("sprint-result");
+    const startBtn = document.getElementById("sprint-start");
+    const timerBar = document.getElementById("sprint-timer-bar");
+    const tagsWrap = document.getElementById("sprint-tags");
+
+    if (!timerEl || !scoreEl || !statementEl || !feedbackEl || !bestEl || !resultEl || !startBtn || !timerBar || !tagsWrap) {
+      return;
+    }
+
+    const tagButtons = Array.from(tagsWrap.querySelectorAll("button[data-tag]"));
+    const gameTime = 60;
+    let current = null;
+    let score = 0;
+    let secondsLeft = gameTime;
+    let loop = null;
+    let running = false;
+
+    const storedBest = Number(localStorage.getItem("ethicsSprintBest") || 0);
+    let best = Number.isFinite(storedBest) ? storedBest : 0;
+    bestEl.textContent = `Best: ${best}`;
+
+    function pickRandomStatement() {
+      current = statements[Math.floor(Math.random() * statements.length)];
+      statementEl.textContent = current.text;
+    }
+
+    function updateTimerUI() {
+      timerEl.textContent = `Time: ${secondsLeft}s`;
+      timerBar.style.width = `${(secondsLeft / gameTime) * 100}%`;
+    }
+
+    function endGame() {
+      running = false;
+      if (loop) clearInterval(loop);
+      loop = null;
+      tagButtons.forEach((btn) => {
+        btn.disabled = true;
+      });
+
+      if (score > best) {
+        best = score;
+        localStorage.setItem("ethicsSprintBest", String(best));
+        bestEl.textContent = `Best: ${best}`;
+      }
+
+      resultEl.className = score >= 6 ? "result good" : "result warn";
+      resultEl.textContent = `Round complete. Final score: ${score}.`;
+      startBtn.textContent = "Play Again";
+      statementEl.textContent = "Round ended. Start again to try new scenarios.";
+    }
+
+    function startGame() {
+      running = true;
+      score = 0;
+      secondsLeft = gameTime;
+      scoreEl.textContent = "Score: 0";
+      feedbackEl.textContent = "";
+      resultEl.className = "result";
+      resultEl.textContent = "";
+      startBtn.textContent = "Running...";
+
+      tagButtons.forEach((btn) => {
+        btn.disabled = false;
+      });
+
+      pickRandomStatement();
+      updateTimerUI();
+
+      if (loop) clearInterval(loop);
+      loop = setInterval(() => {
+        secondsLeft -= 1;
+        updateTimerUI();
+        if (secondsLeft <= 0) {
+          endGame();
+        }
+      }, 1000);
+    }
+
+    tagButtons.forEach((btn) => {
+      btn.disabled = true;
+      btn.addEventListener("click", () => {
+        if (!running || !current) return;
+
+        const chosen = btn.getAttribute("data-tag");
+        const correct = chosen === current.tag;
+        if (correct) {
+          score += 1;
+          feedbackEl.textContent = "Correct tag.";
+          feedbackEl.style.color = "var(--ip-good)";
+        } else {
+          score = Math.max(0, score - 1);
+          feedbackEl.textContent = `Incorrect. This one was: ${current.tag}.`;
+          feedbackEl.style.color = "var(--ip-bad)";
+        }
+
+        scoreEl.textContent = `Score: ${score}`;
+        pickRandomStatement();
+      });
+    });
+
+    startBtn.addEventListener("click", () => {
+      if (running) return;
+      startGame();
+    });
   })();
 </script>

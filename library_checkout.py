@@ -1,16 +1,11 @@
-# ============================================================
+# =====================================
 # Library Checkout System
-# AP Computer Science Principles - Create Performance Task
-# ============================================================
-# This program allows librarians to log in and manage
-# a library's book collection. Librarians can add, view,
-# edit, remove, check out, and return books.
-# ============================================================
+# This program lets librarians log in and manage many things with books in the system. 
+# They can add, view, edit, remove, check out, and return books.
+# =====================================
 
-# --- Librarian account data (dictionary of dictionaries) ---
-# Each account stores a password and a library_data dictionary.
-# Using a dictionary makes it easy to look up any account
-# instantly without searching through a list manually.
+# Each account has a password and username and its own library data.
+
 
 sample_books = {
     "The Hobbit": {"author": "J.R.R. Tolkien", "status": "Available"},
@@ -20,8 +15,8 @@ sample_books = {
     "To Kill a Mockingbird": {"author": "Harper Lee", "status": "Checked Out"}
 }
 
-# This stores all librarian accounts.
-# Key = username, Value = password + that librarian's personal library data.
+
+# All librarian accounts have a username, password and their personal library data. 
 librarian_accounts = {
     "testlibrarian": {
         "password": "library123",
@@ -30,83 +25,69 @@ librarian_accounts = {
 }
 
 
-# --- Procedure: list_books ---
-# Quick summary: prints all books, or only books with a chosen status.
-# Purpose: Displays all books in the library, with optional
-#          filtering by status ("Available" or "Checked Out").
-# Parameters:
-#   book_dict  - the dictionary of books to display
-#   filter_status - (str or None) if provided, only books
-#                   with that status are shown
-# This procedure contains:
-#   Sequencing  - steps run top to bottom
-#   Selection   - if/elif checks decide what to print
-#   Iteration   - for loop goes through every book
+# list_books
+# Shows all books or only books with a chosen status.
+# book_dict: the books to show
 def list_books(book_dict, filter_status=None):
-    # If a filter is provided, show only books with that status.
-    # If no filter is provided, show every book.
-    # --- Sequencing: set up the header first ---
+
     if filter_status:
         print(f"\nBooks with status '{filter_status}':")
     else:
-        print("\nAll Library Books:")
-
-    # --- Selection: handle empty library ---
+       
+     print("\nAll Library Books:")
     if not book_dict:
         print("No books are currently in the system.")
         return
 
-    found_any = False  # track whether any books matched the filter
+    found_any = False 
 
-    # --- Iteration: loop through every book in the collection ---
+    
     for title, info in book_dict.items():
 
-        # --- Selection: apply the status filter if one was given ---
+        
         if filter_status is None or info["status"] == filter_status:
             print(f"  {title} by {info['author']} - {info['status']}")
             found_any = True
 
-    # --- Selection: tell the user if the filter matched nothing ---
+    
     if not found_any:
         print(f"  No books found with status '{filter_status}'.")
 
 
-# --- Procedure: add_book ---
-# Quick summary: asks for book details and saves a new book record.
-# Asks the user for a title, author, and status, then
-# adds the new book to book_dict.
-# Parameters: book_dict - the current library collection
+
+# Here users can add a book into the system 
+# System asks for the title of the book and author so that it can be dded to the library collection. 
+# book_dict: current library collection
 def add_book(book_dict):
-    # Ask user for the new book's title.
+    # Ask for the new book title.
     book_title = input("\nEnter book title: ")
 
-    # Selection: prevent duplicate entries
+    # Stops if the book is already there so there are not two copies of the same book. 
     if book_title in book_dict:
         print("\nThat book is already in the library system.")
         return
 
-    # Ask for book details.
+    # Ask for the rest of the details such as the author and if it is avilable or checked out. 
     author = input(f"Enter author for '{book_title}': ")
     status = input("Enter status (Available / Checked Out): ").strip().title()
 
-    # Selection: default to Available for unrecognized input
+    # he default option is Available if the user does not enter a valid status 
     if status not in ["Available", "Checked Out"]:
         print("Unrecognized status. Defaulting to 'Available'.")
         status = "Available"
 
-    # Sequencing: store the new entry, then confirm
+    # Saves the book and a confirmation message is shown 
     book_dict[book_title] = {"author": author, "status": status}
     print(f"\n'{book_title}' has been added to the system.")
 
 
-# --- Procedure: remove_book ---
-# Quick summary: deletes a book if the title exists in the library.
-# Asks the user for a title and removes it from book_dict.
-# Parameters: book_dict - the current library collection
+# Booke can be removed from the system if it is no longer needed 
+# Removes a book if it exists.
+# book_dict: current library collection
 def remove_book(book_dict):
     book_title = input("\nEnter the title of the book to remove: ")
 
-    # Selection: only remove if it exists
+    # Remove only if the title exists in the system. Otherwise it shows a message saying that the book was not found
     if book_title in book_dict:
         del book_dict[book_title]
         print(f"'{book_title}' has been removed.")
@@ -114,38 +95,36 @@ def remove_book(book_dict):
         print("Book not found.")
 
 
-# --- Procedure: edit_book ---
-# Quick summary: updates the author and status for an existing book.
-# Lets the user update an existing book's author and status.
-# Parameters: book_dict - the current library collection
+# edit_book
+# Updates author and status for a book.
+# book_dict: current library collection
 def edit_book(book_dict):
     book_title = input("\nEnter the title of the book to edit: ")
 
-    # Selection: only edit if it exists
+    # Edit only if the title exists.
     if book_title in book_dict:
         new_author = input(f"Enter new author for '{book_title}': ")
         new_status = input("Enter new status (Available / Checked Out): ").strip().title()
 
-        # Selection: keep old status if new one is invalid
+        # Keep the old status if input is invalid
         if new_status not in ["Available", "Checked Out"]:
             print("Invalid status. Keeping previous status.")
             new_status = book_dict[book_title]["status"]
 
-        # Replace the old author/status with the new values.
+        # Save the new values
         book_dict[book_title] = {"author": new_author, "status": new_status}
         print(f"\n'{book_title}' has been updated.")
     else:
         print("Book not found.")
 
 
-# --- Procedure: view_book ---
-# Quick summary: shows one book's title, author, and status.
-# Displays detailed info for one book.
-# Parameters: book_dict - the current library collection
+# view_book
+# Shows details for one book such as title, author, and status 
+# book_dict: current library collection
 def view_book(book_dict):
     book_title = input("\nEnter book title: ")
 
-    # Selection: only display if found
+    # Show info only if the book is found
     if book_title in book_dict:
         info = book_dict[book_title]
         print(f"\nTitle:  {book_title}")
@@ -155,19 +134,16 @@ def view_book(book_dict):
         print("Book not found. Check spelling and try again.")
 
 
-# --- Procedure: checkout_return_book ---
-# Quick summary: switches a book between Available and Checked Out.
-# Toggles a book's status between Available and Checked Out.
-# Parameters: book_dict - the current library collection
+# checkout_return_book
+# Switches a book from Available to Checked Out and the other way around too
+# book_dict: current library collection
 def checkout_return_book(book_dict):
     book_title = input("\nEnter the title of the book: ")
 
-    # Selection: only act if it exists
+    # Continue only if the book exists.
     if book_title in book_dict:
         current_status = book_dict[book_title]["status"]
-
-        # Selection: toggle based on current status
-        # If available, check it out. Otherwise, return it.
+ # If available, check it out. Otherwise, return it.
         if current_status == "Available":
             book_dict[book_title]["status"] = "Checked Out"
             print(f"\n'{book_title}' has been checked out.")
@@ -178,11 +154,10 @@ def checkout_return_book(book_dict):
         print("Book not found.")
 
 
-# --- Procedure: login ---
-# Quick summary: creates a new account or collects existing login info.
-# Handles both new account creation and existing login.
-# Returns the username and password entered by the user.
-# No parameters needed (uses global librarian_accounts).
+# I used modified code from Copilot to help me with the login and logout system.
+# login system allows users to create accounts and login with a username and password. 
+# Creates a new account or signs in to an existing one.
+# Returns the username and password entered.
 def login():
     print("\n===== Library Checkout System =====")
     create_account = input("\nDo you need to create a new librarian account? (y/n): ").lower()
@@ -191,7 +166,7 @@ def login():
         username = input("\nChoose a username: ")
         password = input("Choose a password: ")
 
-        # Sequencing: create account then confirm
+        # Creates account then confirm it was created by showing a message 
         librarian_accounts[username] = {"password": password, "library_data": {}}
         print("\nAccount created! You can now log in.")
         return username, password
@@ -201,15 +176,11 @@ def login():
         return username, password
 
 
-# --- Procedure: verify_login ---
-# Quick summary: checks whether login credentials are correct.
-# Checks whether the username exists and the password matches.
-# Parameters:
-#   username - the username entered by the user
-#   password - the password entered by the user
-# Returns: True if valid, False otherwise
+# verify_login
+# Checks if username and password are correct.
+# Returns True if valid, otherwise False.
 def verify_login(username, password):
-    # Selection: check existence then password match
+    # Check that username exists and password matches.
     if username in librarian_accounts and librarian_accounts[username]["password"] == password:
         return True
     else:
@@ -217,32 +188,30 @@ def verify_login(username, password):
         return False
 
 
-# --- Procedure: logout ---
-# Quick summary: prints a goodbye message when the user logs out.
-# Prints a logout message. No parameters needed.
+# logout
+# Prints a goodbye message.
 def logout():
     print("\nYou have been logged out. Goodbye!")
 
 
-# ============================================================
-# MAIN PROGRAM LOOP
-# Keeps asking for login until credentials are correct,
-# then shows the menu until the user logs out or exits.
-# ============================================================
+# =====================================
+# Main loop:
+# Keep asking for login until it works,
+# then show the menu until logout or exit.
+# =====================================
 
 while True:
-    # --- Input: collect login credentials ---
+    # Ask for login info.
     username, password = login()
 
     if verify_login(username, password):
-        # Output: confirm successful login
+        # Confirm login success.
         print("\nLogin successful! Welcome,", username)
-        # Grab the current user's book dictionary so menu actions edit their data.
+        # Use this user's book data for all menu actions.
         current_library_data = librarian_accounts[username]["library_data"]
 
-        # Inner loop: keep showing the menu until logout/exit
-        while True:
-            # Output: display menu options
+# Keep showing the menu until the user logs out or exits
+    while True:
             print("\n---------- MENU ----------")
             print("1. Add a book")
             print("2. View a book")
@@ -255,23 +224,21 @@ while True:
             print("9. Log out")
             print("10. Exit")
 
-            # Input: get the user's menu choice
+            
             choice = input("\nEnter your choice: ")
 
-            # Selection: route to the correct procedure
+
+        
             if choice == '1':
                 add_book(current_library_data)
             elif choice == '2':
-                view_book(current_library_data)
+                                view_book(current_library_data)
             elif choice == '3':
-                # Call list_books with no filter — shows everything
-                list_books(current_library_data)
+                                list_books(current_library_data)
             elif choice == '4':
-                # Call list_books with filter_status="Available"
-                list_books(current_library_data, filter_status="Available")
+                                list_books(current_library_data, filter_status="Available")
             elif choice == '5':
-                # Call list_books with filter_status="Checked Out"
-                list_books(current_library_data, filter_status="Checked Out")
+                                list_books(current_library_data, filter_status="Checked Out")
             elif choice == '6':
                 edit_book(current_library_data)
             elif choice == '7':
@@ -280,10 +247,10 @@ while True:
                 checkout_return_book(current_library_data)
             elif choice == '9':
                 logout()
-                break  # break inner loop → go back to login
+                break  # Goes back to the login
             elif choice == '10':
                 print("\nExiting the system. Goodbye!")
                 exit()
             else:
-                # Output: invalid input message
+                # Show message for invalid input.
                 print("Invalid choice. Please enter a number from 1 to 10.")

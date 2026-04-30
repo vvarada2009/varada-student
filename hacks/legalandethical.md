@@ -87,18 +87,19 @@ permalink: /student/ip-ethics-review/
     margin: 0 0 0.6rem;
     font-size: 1.04rem;
     line-height: 1.3;
-    color: #31240b !important;
+    color: #000000 !important;
   }
 
   .ip-panel ul {
     margin: 0;
     padding-left: 1.1rem;
-    color: #36434c;
+    color: #000000 !important;
   }
 
   .ip-panel li {
     margin-bottom: 0.42rem;
     line-height: 1.45;
+    color: #000000 !important;
   }
 
   .concerns-bottom {
